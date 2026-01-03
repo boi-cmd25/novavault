@@ -3,230 +3,1274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NovaVault — Mobile</title>
+<title>NovaVault v20</title>
 
 <style>
-:root{
-  --bg:#0b1020;
-  --card:#141a2b;
-  --soft:#1b2236;
-  --accent:#9b6bff;
-  --text:#ffffff;
-  --muted:#9aa3c7;
+:root {
+  --bg-main: #0b1020;
+  --bg-card: #141a2b;
+  --bg-soft: #1b2236;
+  --accent: #9b6bff;
+  --accent-soft: rgba(155,107,255,0.25);
+  --text-main: #ffffff;
+  --text-muted: #9aa3c7;
 }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background:#00051b !important;
+  background:#00051b;
+  color: var(--text-main);
 }
 
-.wrapper{
-  max-width:480px;
-  margin:0 auto;
-  padding:20px 16px 40px;
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
 }
 
-.section{
-  background:var(--card);
-  border-radius:16px;
-  padding:16px;
-  margin-bottom:16px;
+.panel {
+  background: linear-gradient(180deg, #161d33, #10162a);
+  border-radius: 22px;
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 36px;
 }
 
-h1,h2,h3{
-  margin:0 0 10px;
-  font-weight:600;
-  letter-spacing:-0.2px;
+/* LEFT */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
-h1{font-size:22px}
-h2{font-size:18px}
-h3{font-size:15px}
-
-p{
-  margin:0;
-  font-size:14px;
-  line-height:1.5;
-  color:rgba(255,255,255,.78);
+th, td {
+  padding: 14px 16px;
+  text-align: left;
 }
 
-/* deposits */
-.tier{
-  display:flex;
-  justify-content:space-between;
-  padding:10px 0;
-  border-top:1px solid rgba(255,255,255,.08);
-  font-size:14px;
+th {
+  color: var(--text-muted);
+  font-weight: 600;
 }
-.tier:first-child{border-top:0}
 
-/* calculator */
-label{
-  display:flex;
-  justify-content:space-between;
-  font-size:14px;
-  margin-bottom:6px;
+td {
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
-input[type=range]{
-  width:100%;
+
+th:first-child, td:first-child {
+  width: 200px;
+  white-space: nowrap;
 }
-input[type=checkbox]{transform:scale(1.1)}
+
+tbody tr.active {
+  background: linear-gradient(90deg, var(--accent-soft), transparent);
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+
+/* RIGHT */
+.calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.slider-block {
+  margin-bottom: 26px;
+}
+
+.slider-block label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+input[type=range] {
+  width: 100%;
+  appearance: none;
+  height: 6px;
+  border-radius: 6px;
+  background: #3a3f55;
+  outline: none;
+  margin-top: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.checkbox {
+  margin: 18px 0;
+}
+
+.kpis {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
 
 .kpis{
+  margin-top:16px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:12px;
+  grid-template-columns:repeat(5, 1fr);
+  gap:14px;
 }
 .kpi{
-  background:var(--soft);
-  border-radius:12px;
-  padding:12px;
+  background:var(--bg-soft);
+  border-radius:16px;
+  padding:14px 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  text-align:left;
+  min-height:92px;
 }
 .kpi span{
-  display:block;
-  font-size:12px;
-  color:rgba(255,255,255,.65);
+  color:rgba(255,255,255,0.75);
+  font-size:13px;
+  line-height:1.2;
 }
 .kpi strong{
+  margin-top:auto;
   display:block;
-  margin-top:6px;
-  font-size:18px;
+  font-size:20px;
+  line-height:1.05;
+  white-space:nowrap;
 }
 
-/* security */
-.sec-item{
+.kpi.final {
+  background: linear-gradient(180deg, var(--accent), #6f4bff);
+}
+
+/* ===== Institutional copy v24 ===== */
+.hero{
+  margin-bottom:22px;
+  padding:22px 26px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.hero h1{
+  margin:0 0 8px;
+  font-size:28px;
+  line-height:1.15;
+  letter-spacing:-0.3px;
+}
+.hero p{
+  margin:0;
+  color:rgba(255,255,255,0.78);
+  font-size:14px;
+  line-height:1.5;
+}
+.hero .micro{
   margin-top:10px;
-  font-size:13px;
-  color:rgba(255,255,255,.75);
-}
-
-/* footer */
-.footer{
+  color:rgba(255,255,255,0.65);
   font-size:12px;
-  color:rgba(255,255,255,.6);
+}
+.section-note{
+  margin-top:12px;
+  color:rgba(255,255,255,0.65);
+  font-size:12px;
   line-height:1.45;
 }
+.kpi-caption{
+  margin:10px 0 12px;
+  color:rgba(255,255,255,0.72);
+  font-size:13px;
+  font-weight:600;
+}
+.footer-cta{
+  margin-top:22px;
+  padding:18px 18px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.footer-cta .title{
+  margin:0 0 6px;
+  font-weight:700;
+}
+.footer-cta .text{
+  margin:0;
+  color:rgba(255,255,255,0.72);
+  font-size:13px;
+  line-height:1.45;
+}
+
+/* ===== Security & Privacy block v25 ===== */
+.security{
+  margin-top:32px;
+  padding:26px;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.08);
+}
+.security h3{
+  margin:0 0 12px;
+  font-size:22px;
+  letter-spacing:-0.2px;
+}
+.security .lead{
+  color:rgba(255,255,255,0.8);
+  font-size:14px;
+  line-height:1.55;
+  margin-bottom:18px;
+}
+.security-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.security-item{
+  padding:16px;
+  border-radius:14px;
+  background:rgba(0,0,0,0.25);
+}
+.security-item h4{
+  margin:0 0 6px;
+  font-size:15px;
+}
+.security-item p{
+  margin:0;
+  font-size:13px;
+  color:rgba(255,255,255,0.72);
+  line-height:1.45;
+}
+.security-note{
+  margin-top:18px;
+  font-size:12px;
+  color:rgba(255,255,255,0.6);
+  line-height:1.45;
+}
+.terms{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px dashed rgba(255,255,255,0.2);
+}
+.terms h4{
+  margin:0 0 6px;
+  font-size:14px;
+}
+.terms p{
+  margin:0;
+  font-size:12px;
+  color:rgba(255,255,255,0.6);
+  line-height:1.45;
+}
+
+/* ===== Dual Headline Row ===== */
+.dual-headline{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-bottom:28px;
+}
+.dual-headline .box{
+  padding:22px 26px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.dual-headline h1{
+  margin:0 0 10px;
+  font-size:28px;
+  line-height:1.15;
+  letter-spacing:-0.3px;
+}
+.dual-headline p{
+  margin:0;
+  font-size:14px;
+  color:rgba(255,255,255,0.75);
+  line-height:1.5;
+}
+@media(max-width:900px){
+  .dual-headline{grid-template-columns:1fr}
+}
+
+/* --- FIX ALIGNMENT v30 --- */
+.kpi-grid {
+  align-items: flex-end;
+}
+.kpi-card .value {
+  margin-top: 14px;
+}
+
+.calculator-panel {
+  min-height: 520px;
+}
+
+/* === FIX: prevent edge stretching on browser zoom === */
+.panel{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Structural Intro (Institutional Green) === */
+.structural-intro {
+  margin: 32px auto 48px;
+  max-width: 1200px;
+  padding: 22px 26px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(90, 160, 120, 0.12),
+    rgba(90, 160, 120, 0.06)
+  );
+
+  border: 1px solid rgba(90, 160, 120, 0.28);
+  border-radius: 10px;
+
+  color: #D8E6DF;
+}
+
+.structural-intro p {
+  margin: 0 0 12px 0;
+  line-height: 1.55;
+}
+
+.structural-intro p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* === Phase Status Block === */
+.phase-status {
+  margin-top:20px;
+  background: rgba(196, 170, 80, 0.16);
+  border-top: 1px solid rgba(196, 170, 80, 0.35);
+  border-bottom: 1px solid rgba(196, 170, 80, 0.35);
+}
+
+.phase-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  text-align: center;
+}
+
+.phase-title {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E6D89A;
+  margin-bottom: 6px;
+}
+
+.phase-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #F3EED3;
+}
+
+</style>
+
+<style>
+.kpi-grid{align-items:flex-end;}
+.kpi-card .value{line-height:1; margin-top:8px;}
+
+/* --- FIX ALIGNMENT v30 --- */
+.kpi-grid {
+  align-items: flex-end;
+}
+.kpi-card .value {
+  margin-top: 14px;
+}
+
+.calculator-panel {
+  min-height: 520px;
+}
+
+</style>
+
+<style>
+.graf-scope{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:radial-gradient(circle at top,#141a3a,#080b1c 70%);
+  color:#e8ebff;
+}
+
+.graf-scope .wrapper{
+  max-width:960px;
+  margin:80px auto;
+  padding:56px;
+  background:linear-gradient(180deg,#151b3a,#0c1024);
+  border-radius:22px;
+  box-shadow:0 40px 120px rgba(0,0,0,.45);
+  position:relative;
+}
+
+.graf-scope .block{
+  box-shadow:none !important;
+
+  background:rgba(255,255,255,.04);
+  border-radius:14px;
+  padding:18px 22px;
+  margin:54px 0;
+  transition:
+    box-shadow .25s ease,
+    border-color .25s ease,
+    background .25s ease;
+}
+
+/* Выравнивания */
+.graf-scope .full{ text-align:center; box-shadow:0 0 0 1px rgba(200,70,90,0.15), 0 20px 60px rgba(200,70,90,0.18); }
+.graf-scope .right{ width:50%; margin-left:auto; text-align:right; }
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+
+/* Источник капитала — фиолетовый */
+.investor{
+  border:1px dashed rgba(150,120,255,.4);
+  background:rgba(150,120,255,.08);
+}
+.investor:hover{
+  box-shadow:0 0 22px rgba(150,120,255,.25);
+  border-color:rgba(150,120,255,.7);
+}
+
+/* Контур доступа / защиты / результат — нейтральные */
+.graf-scope .block:not(.investor):not(.core):not(.return):hover{
+  box-shadow:0 0 18px rgba(140,160,255,.18);
+
+  box-shadow:0 0 18px rgba(140,160,255,.18);
+  background:rgba(255,255,255,.06);
+}
+
+/* Центральный контур управления — жёлтый */
+.core{
+  background:linear-gradient(135deg,#ffd84d,#ffb800);
+  color:#1b1400;
+}
+.core:hover{
+  box-shadow:0 0 26px rgba(255,216,77,.45);
+}
+
+/* Завершение цикла — зелёный */
+.return{
+  border:1px dashed rgba(120,200,120,.5);
+  background:rgba(120,200,120,.08);
+}
+.return:hover{
+  box-shadow:0 0 22px rgba(120,200,120,.35);
+  border-color:rgba(120,200,120,.8);
+}
+
+/* SVG */
+.graf-scope svg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:10;
+}
+/* --- embedding overrides --- */
+.graf-scope .wrapper{
+  max-width: 100% !important;
+  margin: 18px 0 0 !important;
+  padding: 28px !important;
+}
+.graf-scope{
+  background: transparent !important;
+}
+
+</style>
+
+<style>
+/* === FIX: restore yellow core block exactly as Graf === */
+.graf-scope .core{
+  box-shadow:none !important;
+
+  background: linear-gradient(135deg,#ffd84d,#ffb800) !important;
+  color:#1b1400 !important;
+  box-shadow:0 0 26px rgba(255,216,77,.45) !important;
+}
+.graf-scope .core:hover{
+  box-shadow:0 0 32px rgba(255,216,77,.55) !important;
+}
+</style>
+
+<style>
+/* === FIX: yellow glow only on hover === */
+.graf-scope .core{
+  box-shadow:none !important;
+
+  box-shadow:none !important;
+}
+.graf-scope .core:hover{
+  box-shadow:0 0 32px rgba(255,216,77,.55) !important;
+}
+</style>
+
+<style>
+/* === ALIGN SECURITY & GRAPH BLOCK HEIGHTS === */
+.panel{
+  align-items: stretch;
+}
+.panel > div{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.security{
+  flex:1 1 auto;
+}
+
+/* === FINAL ALIGNMENT FIX v1 === */
+.calc{
+  padding-top: 6px;
+}
+.security{
+  margin-top: 26px;
+}
+
+/* === MOBILE OPTIMIZATION (<=767px) === */
+@media (max-width: 767px){
+
+  body{
+    font-size:14px;
+  }
+
+  .container{
+    padding:0 16px;
+  }
+
+  .dual-headline{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .panel{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:24px;
+  }
+
+  h1{font-size:22px;}
+  h2{font-size:20px;}
+  h3{font-size:18px;}
+
+  table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .calc{
+    margin-top:12px;
+  }
+
+  .kpis{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .kpi.final{
+    grid-column:1 / -1;
+  }
+
+  .graf-scope .wrapper{
+    padding:20px !important;
+  }
+
+  .security-grid{
+    grid-template-columns:1fr;
+  }
+
+  .security{
+    padding:20px;
+  }
+
+}
+
+/* === TABLET OPTIMIZATION (768px–1199px) === */
+@media (min-width: 768px) and (max-width: 1199px){
+
+  body{
+    font-size:15px;
+  }
+
+  .container{
+    padding:0 20px;
+  }
+
+  .dual-headline{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .panel{
+    grid-template-columns:1fr;
+    gap:28px;
+    padding:28px;
+  }
+
+  h1{font-size:24px;}
+  h2{font-size:22px;}
+  h3{font-size:20px;}
+
+  table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .kpis{
+    grid-template-columns:repeat(3, 1fr);
+  }
+
+  .kpi.final{
+    grid-column:1 / -1;
+  }
+
+  .graf-scope .wrapper{
+    padding:26px !important;
+  }
+
+  .security-grid{
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+
+}
+
+/* === HEADER / LOGO / ACCESS === */
+.header-left{
+  display:flex;
+  align-items:center;
+}
+.nv-logo{
+  height:48px;
+  width:auto;
+  display:block;
+  filter:none;
+}
+@media (max-width:767px){
+  .nv-logo{height:34px;}
+}
+
+.header{
+  background:#00051b;
+
+  background:#00051b;
+
+  max-width:1200px;
+  margin:24px auto 0;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:14px;
+}
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#E3E7EF;
+  font-weight:500;
+}
+.header-left img{
+  height:48px;
+  width:auto;
+  display:block;
+}
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  color:#B8C0CC;
+}
+.header-right a{
+  color:#B8C0CC;
+  text-decoration:none;
+}
+.header-right a:hover{
+  color:#E3E7EF;
+}
+
+
+/* === FORCE BRAND TITLE & SPACING === */
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.brand-name{
+  font-size:15px;
+  letter-spacing:0.06em;
+  color:#E6EBF5;
+  font-weight:500;
+}
+
+
+/* === HEADER FINAL FIX === */
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.header-left img{
+  display:block;
+}
+.brand-name{
+  font-size:15px;
+  letter-spacing:0.05em;
+  color:#E6EBF5;
+  font-weight:500;
+}
+
+
+/* === CLEAN EMPTY BLOCKS FALLBACK === */
+.card:empty,
+.empty:empty,
+.placeholder:empty{
+  display:none !important;
+}
+
+
+/* === ABSOLUTE EMPTY BLOCK KILL SWITCH === */
+div:empty{
+  display:none !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+
+/* === FINAL HARD FIX: REMOVE EMPTY VISUAL SPACERS === */
+section:not(.levels):not(.calculator) .card{
+  background:none !important;
+  box-shadow:none !important;
+  border:0 !important;
+  padding:0 !important;
+  min-height:0 !important;
+  height:0 !important;
+  margin:0 !important;
+}
+
+
+/* === NUCLEAR FIX: HIDE EMPTY SPACER SECTION === */
+section:has(> div:has(> .card):nth-child(2)){
+  display:none !important;
+}
+
+
+/* ================= MOBILE VERSION ================= */
+@media (max-width: 768px){
+
+  body{
+    font-size:14px;
+  }
+
+  header.header{
+    padding:14px 16px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .header-left{
+    flex:1 1 auto;
+  }
+
+  .header-right{
+    flex:1 1 auto;
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+  }
+
+  .phase-status{
+    margin-top:16px;
+    padding:14px 16px;
+    text-align:center;
+  }
+
+  .levels-grid,
+  .levels,
+  .cards,
+  .security-grid,
+  .calculator-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:16px;
+  }
+
+  .level-card,
+  .card,
+  .security-item{
+    width:100% !important;
+  }
+
+  .calculator input,
+  .calculator select,
+  .calculator button{
+    width:100%;
+    min-height:44px;
+    font-size:15px;
+  }
+
+  .schema img,
+  .schema svg{
+    max-width:100%;
+    height:auto;
+  }
+
+  section{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
-<div class="wrapper">
 
-<!-- 1. WHAT IS IT -->
-<div class="section">
-  <h1>NovaVault</h1>
+<header class="header">
+  <div class="header-left">
+    <img src="logo-novavault.png" alt="NovaVault logo" class="nv-logo">
+    <span class="brand-name">NovaVault</span>
+  </div>
+
+  <div class="header-right">
+    <a href="#" id="lang-en">EN</a> | <a href="#" id="lang-ru">RU</a>
+    <a href="#" onclick="return false;"><span data-i18n="client_access">Client Access</span></a>
+  </div>
+</header>
+
+<section class="phase-status">
+  <div class="phase-inner">
+    <div class="phase-title">Текущая фаза структуры</div>
+    <div class="phase-text">
+      Осуществляется первичное открытие структуры.<br>
+      Участие рассматривается в рамках долгосрочной модели управления капиталом.
+    </div>
+  </div>
+</section>
+
+
+<section class="structural-intro">
   <p>
-    Закрытая инвестиционная модель, ориентированная на дисциплинированное
-    управление капиталом и контроль рисков.  
-    Не является публичным инвестиционным продуктом.
+    NovaVault является частной инвестиционной структурой, сформированной в соответствии с принципами институционального управления капиталом. Деятельность структуры ориентирована на системную аллокацию капитала, контроль рисков и регламентированность инвестиционных процессов.
   </p>
-</div>
+  <p>
+    Участие в структуре носит ограниченный и долгосрочный характер. NovaVault не функционирует в формате публичного инвестиционного продукта и не предполагает открытого доступа неограниченного круга лиц.
+  </p>
+</section>
 
-<!-- 2. DEPOSIT TIERS -->
-<div class="section">
-  <h2>Градация депозитов</h2>
+<div class="container">
 
-  <div class="tier"><span>$50 – $249</span><span>3.0% / мес</span></div>
-  <div class="tier"><span>$250 – $999</span><span>3.3% / мес</span></div>
-  <div class="tier"><span>$1 000 – $4 999</span><span>3.7% / мес</span></div>
-  <div class="tier"><span>$5 000 – $19 999</span><span>4.1% / мес</span></div>
-  <div class="tier"><span>$20 000+</span><span>Индивидуально</span></div>
 
-</div>
-
-<!-- 3. CALCULATOR -->
-<div class="section">
-  <h2>Калькулятор</h2>
-
-  <label>Депозит <strong id="dVal"></strong></label>
-  <input type="range" id="dep" min="50" max="50000" value="1000">
-
-  <label style="margin-top:12px;">Срок (мес) <strong id="mVal"></strong></label>
-  <input type="range" id="mon" min="1" max="24" value="6">
-
-  <label style="margin-top:12px;">
-    <span>Реинвестирование</span>
-    <input type="checkbox" id="re" checked>
-  </label>
-
-  <div class="kpis">
-    <div class="kpi">
-      <span>Прибыль</span>
-      <strong id="profit"></strong>
-    </div>
-    <div class="kpi">
-      <span>Итог</span>
-      <strong id="total"></strong>
-    </div>
+  <div class="box">
+    <h1></h1>
+    
   </div>
 </div>
 
-<!-- 4. SECURITY -->
-<div class="section">
-  <h2>Безопасность</h2>
+  
+  </div>
 
-  <div class="sec-item">• Конфиденциальность данных инвестора</div>
-  <div class="sec-item">• Закрытый формат участия</div>
-  <div class="sec-item">• Отсутствие публичной отчётности</div>
-  <div class="sec-item">• Разделение операционных контуров</div>
+  <div class="panel">
+
+    <div>
+      <h2><span data-i18n="tiers_title">Уровни размещения капитала</span></h2>
+      <p style="color:var(--text-muted)">Доходность формируется в рамках утверждённой инвестиционной модели и отражает особенности управления капиталом при различных объёмах размещения, включая вопросы ликвидности, операционной эффективности и контроля рисков.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Сумма<br>депозита</th>
+            <th>Доходность / мес.</th>
+            <th>Доходность / год</th>
+            <th>Tier</th>
+          </tr>
+        </thead>
+        <tbody id="tiers">
+
+<tr data-min="50" data-rate="0.03"><td>$50 – $249</td><td>3.0%</td><td>~36%</td><td>Initial</td></tr>
+<tr data-min="250" data-rate="0.033"><td>$250 – $999</td><td>3.3%</td><td>~40%</td><td>Core</td></tr>
+<tr data-min="1000" data-rate="0.037"><td>$1,000 – $4,999</td><td>3.7%</td><td>~44%</td><td>Strategic</td></tr>
+<tr data-min="5000" data-rate="0.041"><td>$5,000 – $19,999</td><td>4.1%</td><td>~49%</td><td>Institutional</td></tr>
+<tr data-min="20000" data-rate="0.045"><td>$20,000 – $49,999</td><td>4.5%</td><td>~54%</td><td>Private</td></tr>
+<tr data-min="50000" data-rate="0.045"><td>$50,000+</td><td>Индивидуально</td><td>—</td><td>Individual</td></tr>
+
+</tbody>
+      </table>
+      <div class="section-note">Доходность формируется в рамках структурированной стратегии и может корректироваться в зависимости от рыночных условий.</div>
+
+<div class="security">
+  <h3>Безопасность и конфиденциальность</h3>
+  <p class="lead" style="max-width:820px;margin:0 auto 18px;">
+    NovaVault изначально проектировался с приоритетом конфиденциальности, контроля доступа и защиты
+    финансовых интересов инвестора. Мы используем подходы, характерные для private banking и
+    альтернативных инвестиционных структур.
+  </p>
+
+  <div class="security-grid">
+    <div class="security-item">
+      <h4>Конфиденциальность данных</h4>
+      <p>
+        Персональная информация, параметры капитала и инвестиционная активность не передаются третьим
+        лицам и не публикуются в открытых источниках.
+      </p>
+    </div>
+
+    <div class="security-item">
+      <h4>Приватный формат участия</h4>
+      <p>
+        Участие не предполагает публичной экспозиции капитала. Взаимодействие осуществляется напрямую,
+        без публичных реестров и посредников.
+      </p>
+    </div>
+
+    <div class="security-item">
+      <h4>Отсутствие автоматической отчётности</h4>
+      <p>
+        NovaVault не осуществляет автоматическую передачу информации в финансовый мониторинг,
+        налоговые органы или сторонние отчётные системы.
+      </p>
+    </div>
+
+    <div class="security-item">
+      <h4>Архитектура безопасности</h4>
+      <p>
+        Ограниченный доступ к данным, разделение операционных и аналитических уровней и минимизация
+        цифрового следа являются частью базовой архитектуры системы.
+      </p>
+    </div>
+  </div>
+
+  <div class="security-note">
+    Финансовая приватность рассматривается как неотъемлемая часть инвестиционной свободы и контроля
+    над капиталом.
+  </div>
+
+  <div class="security-note">
+    Архитектура NovaVault выстроена таким образом, чтобы исключить концентрацию операционных,
+    технических и управленческих рисков в одной точке. Все процессы распределены по независимым
+    контурам, что снижает уязвимость системы и повышает устойчивость инвестиционной модели.
+  </div>
+
+  <div class="security-note">
+    Управление капиталом осуществляется в рамках заранее определённых параметров, включая лимиты
+    экспозиции, сценарии перераспределения и условия завершения инвестиционного цикла. Изменение
+    параметров допускается исключительно в рамках согласованной модели.
+  </div>
+
+  <div class="security-note">
+    NovaVault не использует агрессивные методы привлечения капитала, автоматизированные стратегии
+    с неконтролируемым риском или механизмы, предполагающие обязательное вовлечение новых участников.
+  </div>
+
+  <div class="security-note">
+    Инвестор сохраняет контроль над принятием ключевых решений и рассматривается как независимая
+    сторона инвестиционного процесса, действующая на основании собственных оценок и приоритетов.
+  </div>
+
+  <div class="security-note">
+    Все взаимодействия в рамках NovaVault носят закрытый характер и осуществляются в пределах
+    согласованной инвестиционной структуры, без публичного предложения, рекламы или открытого
+    распространения информации.
+  </div>
+
+  <div class="security-note">
+    Настоящее описание предназначено исключительно для ознакомления с принципами организации
+    инвестиционного процесса и не формирует договорных обязательств до момента их формального
+    закрепления.
+  </div>
+
+  <div class="terms">
+    <h4>Юридическое уведомление</h4>
+    <p>
+      NovaVault не предоставляет юридических, налоговых или бухгалтерских консультаций. Инвестор
+      самостоятельно принимает решения относительно учёта и декларирования в соответствии с
+      требованиями законодательства своей юрисдикции.
+    </p>
+  </div>
 </div>
 
-<!-- 5. FOOTER -->
-<div class="section footer">
-  Представленная информация носит ознакомительный характер и не является
-  инвестиционной рекомендацией, публичной офертой или обязательством.
-  Инвестор самостоятельно принимает все решения и несёт связанные с ними риски.
+    </div>
+
+    <div class="calc">
+      <h2><span data-i18n="calc_title">Инвестиционный калькулятор</span></h2>
+      <p style="color:var(--text-muted)">Используйте калькулятор для моделирования возможных сценариев доходности в зависимости от суммы депозита, срока размещения и эффекта реинвестирования.</p>
+
+      <div class="slider-block">
+        <label>Сумма депозита <span id="depVal"></span></label>
+        <input id="deposit" type="range" min="50" max="50000" value="2137">
+      </div>
+
+      <div class="slider-block">
+        <label>Срок (мес.) <span id="monVal"></span></label>
+        <input id="months" type="range" min="1" max="24" value="2">
+      </div>
+
+      <div class="checkbox">
+        <label><input type="checkbox" id="reinvest" checked> Реинвестировать ежемесячную прибыль</label>
+      </div>
+
+      <div class="section-note">Расчёты носят ориентировочный характер и предназначены для иллюстрации динамики капитала. Фактические результаты могут отличаться в зависимости от рыночной среды.</div>
+      <div class="kpi-caption"><span data-i18n="kpi_title">Ключевые показатели за выбранный период:</span></div>
+      <div class="kpis">
+        <div class="kpi">Начальный депозит<strong id="kStart"></strong></div>
+        <div class="kpi">Месяцев<strong id="kMonths"></strong></div>
+        <div class="kpi">Проценты<strong id="kPerc"></strong></div>
+        <div class="kpi">Чистая прибыль<strong id="kProfit"></strong></div>
+        <div class="kpi final">Итоговый баланс<strong id="kFinal"></strong></div>
+      </div>
+      <div class="section-note">NovaVault рассматривается как элемент диверсифицированного инвестиционного портфеля, а не как спекулятивный инструмент.</div>
+    
+
+<!-- GRAF INSERT -->
+<div class="graf-scope" id="nvGraf">
+<div class="wrapper" id="wrapper">
+
+  <div id="investor" class="block full investor">
+    <strong>Источник капитала</strong><br>
+    Инициация передачи капитала в рамках закрытой инвестиционной структуры
+  </div>
+
+  <div id="data" class="block full">
+    <strong>Контур защиты данных</strong><br>
+    Обособленный контур обработки информации · Исключение внешней идентификации · Обеспечение целостности данных
+  </div>
+
+  <div id="access" class="block right">
+    <strong>Контур доступа</strong><br>
+    Регламентированная модель доступа · Разграничение информационных и операционных прав
+  </div>
+
+  <div id="core" class="block core right">
+    <strong>Центральный контур управления</strong><br>
+    Аллокация капитала в соответствии с установленными параметрами · Контроль операционных и инвестиционных рисков
+  </div>
+
+  <div id="result" class="block right">
+    <strong>Результат инвестиционной деятельности</strong><br>
+    Фиксация результата в рамках утверждённой инвестиционной модели · Определение дальнейшего статуса капитала
+  </div>
+
+  <div id="return" class="block full return">
+    <strong>Завершение инвестиционного цикла</strong><br>
+    Исполнение обязательств по возврату капитала и результата инвестиционной деятельности в рамках закрытой структуры
+  </div>
+
+  <!-- SVG стрелки остаются без изменений -->
+  <svg id="arrows">
+    <defs>
+      <marker id="yellowArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#ffd84d"/>
+      </marker>
+      <marker id="greenArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#6dff9a"/>
+      </marker>
+    </defs>
+
+    <line id="y1" stroke="#ffd84d" stroke-width="1.5" marker-end="url(#yellowArrow)"/>
+    <line id="y2" stroke="#ffd84d" stroke-width="1.5" marker-end="url(#yellowArrow)"/>
+    <line id="y3" stroke="#ffd84d" stroke-width="1.5" marker-end="url(#yellowArrow)"/>
+    <line id="y4" stroke="#ffd84d" stroke-width="1.5" marker-end="url(#yellowArrow)"/>
+    <line id="y5" stroke="#ffd84d" stroke-width="1.5" marker-end="url(#yellowArrow)"/>
+
+    <line id="g1" stroke="#6dff9a" stroke-width="1.5" marker-end="url(#greenArrow)"/>
+    <line id="g2" stroke="#6dff9a" stroke-width="1.5" marker-end="url(#greenArrow)"/>
+  </svg>
+
+</div>
+</div>
+<!-- /GRAF INSERT -->
+
+<script>
+(function(){
+  const root = document.getElementById('nvGraf');
+  if(!root) return;
+
+  const wrapper = root.querySelector('#wrapper');
+  const arrows = root.querySelector('#arrows');
+  if(!wrapper || !arrows) return;
+
+  // helper to find line elements
+  const $ = (id)=> root.querySelector('#'+id);
+
+  function draw(){
+    const w = wrapper.getBoundingClientRect();
+    const gap = 18;
+    const xYellow = w.width * 0.75;
+    const xGreen  = w.width * 0.25;
+
+    const r = id => root.querySelector('#'+id).getBoundingClientRect();
+
+    function down(line, from, to){
+      line.setAttribute('x1', xYellow);
+      line.setAttribute('x2', xYellow);
+      line.setAttribute('y1', from.bottom - w.top + gap);
+      line.setAttribute('y2', to.top - w.top - gap);
+    }
+
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    down($('y1'), r('investor'), r('data'));
+    down($('y2'), r('data'), r('access'));
+    down($('y3'), r('access'), r('core'));
+    down($('y4'), r('core'), r('result'));
+    down($('y5'), r('result'), r('return'));
+
+    up($('g1'), r('return'), r('data'));
+    up($('g2'), r('data'), r('investor'));
+  }
+
+  // Run after layout settles
+  const run = ()=> requestAnimationFrame(()=> requestAnimationFrame(draw));
+
+  window.addEventListener('load', run);
+  window.addEventListener('resize', run);
+
+  if('ResizeObserver' in window){
+    const ro = new ResizeObserver(run);
+    ro.observe(wrapper);
+  }
+  // Initial
+  run();
+})();
+</script>
+
 </div>
 
+  </div>
 </div>
 
 <script>
-const dep=document.getElementById('dep');
-const mon=document.getElementById('mon');
-const re=document.getElementById('re');
+const dep = document.getElementById('deposit');
+const mon = document.getElementById('months');
+const reinv = document.getElementById('reinvest');
+const rows = [...document.querySelectorAll('#tiers tr')];
 
-const dVal=document.getElementById('dVal');
-const mVal=document.getElementById('mVal');
-const profit=document.getElementById('profit');
-const total=document.getElementById('total');
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US').replace(/,/g,' ');}
 
-function rateByDep(d){
-  if(d>=20000) return 0.045;
-  if(d>=5000) return 0.041;
-  if(d>=1000) return 0.037;
-  if(d>=250) return 0.033;
-  return 0.03;
-}
-
-function fmt(n){
-  return '$'+Math.round(n).toLocaleString('en-US');
+function paint(slider){
+  const min = slider.min, max = slider.max, val = slider.value;
+  const p = (val-min)/(max-min)*100;
+  slider.style.background = `linear-gradient(90deg, var(--accent) ${p}%, #3a3f55 ${p}%)`;
 }
 
 function calc(){
-  let d=+dep.value;
-  let m=+mon.value;
-  let r=rateByDep(d);
-  let t=d;
+  let d = +dep.value;
+  let m = +mon.value;
 
-  if(re.checked){
-    for(let i=0;i<m;i++) t+=t*r;
-  }else{
-    t=d+(d*r*m);
+  paint(dep); paint(mon);
+
+  depVal.innerText = fmt(d);
+  monVal.innerText = m;
+  kStart.innerText = fmt(d);
+  kMonths.innerText = m;
+
+  let rate = 0.03, active;
+  rows.forEach(r=>{
+    r.classList.remove('active');
+    if(d >= +r.dataset.min){ rate = +r.dataset.rate; active = r; }
+  if(d >= 50000){ rate = +rows[rows.length-2].dataset.rate; }
+  });
+  if(active) active.classList.add('active');
+
+  let total = d;
+
+  if(reinv.checked){
+    // compound interest
+    for(let i=0;i<m;i++) total += total*rate;
+  } else {
+    // simple interest (no reinvest)
+    total = d + (d * rate * m);
   }
 
-  dVal.textContent=fmt(d);
-  mVal.textContent=m;
-  profit.textContent=fmt(t-d);
-  total.textContent=fmt(t);
+  let profit = total - d;
+
+  kProfit.innerText = fmt(profit);
+  kFinal.innerText  = fmt(total);
+  kPerc.innerText   = Math.round((profit / d) * 100) + '%';
 }
 
-dep.oninput=mon.oninput=re.onchange=calc;
+dep.oninput = mon.oninput = reinv.onchange = calc;
 calc();
+</script>
+
+<!-- === INSTITUTIONAL CLOSING STATEMENT === -->
+<div class="container">
+  <div class="security" style="margin-top:48px;background:linear-gradient(180deg, rgba(155,50,70,0.22), rgba(155,50,70,0.08));border:1px solid rgba(200,70,90,0.35);text-align:center; box-shadow:0 0 0 1px rgba(200,70,90,0.15), 0 20px 60px rgba(200,70,90,0.18);">
+    <h3><span data-i18n="closing_title">Заключительное положение</span></h3>
+    <p class="lead" style="max-width:820px;margin:0 auto 18px;">
+      NovaVault рассматривается как закрытая инвестиционная структура, ориентированная на
+      дисциплинированное управление капиталом и долгосрочную устойчивость инвестиционной модели.
+    </p>
+    <p class="security-note" style="max-width:820px;margin:0 auto 14px;">
+      Представленные материалы носят информационный характер и предназначены для формирования
+      общего представления о принципах организации инвестиционного процесса.
+    </p>
+    <p class="security-note" style="max-width:820px;margin:0 auto 14px;">
+      Принятие инвестиционных решений осуществляется инвестором самостоятельно, с учётом собственных
+      инвестиционных целей, оценки рисков и требований применимого законодательства.
+    </p>
+  </div>
+</div>
+<!-- === /INSTITUTIONAL CLOSING STATEMENT === -->
+
+<script>
+/* === i18n RU / EN (foundation) === */
+const i18n = {
+  en: {
+    client_access: "Client Access",
+    tiers_title: "Capital Allocation Levels",
+    calc_title: "Investment Calculator",
+    kpi_title: "Key metrics for the selected period:",
+    closing_title: "Closing Statement"
+  },
+  ru: {
+    client_access: "Client Access",
+    tiers_title: "Уровни размещения капитала",
+    calc_title: "Инвестиционный калькулятор",
+    kpi_title: "Ключевые показатели за выбранный период:",
+    closing_title: "Заключительное положение"
+  }
+};
+
+function applyLang(lang){
+  const dict = i18n[lang] || i18n.en;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(dict[key]) el.textContent = dict[key];
+  });
+  localStorage.setItem("lang", lang);
+}
+
+function detectLang(){
+  const saved = localStorage.getItem("lang");
+  if(saved && i18n[saved]) return saved;
+  const nav = navigator.language ? navigator.language.slice(0,2) : "en";
+  return i18n[nav] ? nav : "en";
+}
+
+document.getElementById("lang-en")?.addEventListener("click", e=>{e.preventDefault(); applyLang("en");});
+document.getElementById("lang-ru")?.addEventListener("click", e=>{e.preventDefault(); applyLang("ru");});
+
+applyLang(detectLang());
 </script>
 
 </body>
