@@ -2,6 +2,483 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaVault — Mobile</title>
+
+<style>
+:root{
+  --bg:#070c1d;
+  --glass:rgba(12,20,45,0.55);
+  --border:rgba(255,255,255,0.08);
+  --text:#e6ecf5;
+  --muted:#9fb0c8;
+  --yellow-bg:rgba(196,170,80,0.16);
+  --yellow-br:rgba(196,170,80,0.35);
+  --green-bg:rgba(90,160,120,0.14);
+  --green-br:rgba(90,160,120,0.35);
+  --line:rgba(255,255,255,.08);
+  --accent:#8b5cf6;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+/* HEADER */
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--glass);
+  backdrop-filter: blur(16px) saturate(140%);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:420px;
+  margin:0 auto;
+  padding:14px 16px 18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+}
+.brand img{width:64px;height:64px}
+.brand span{font-size:18px;font-weight:600}
+.header-btn{
+  width:100%;
+  max-width:320px;
+  padding:12px;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(40,110,200,.18),rgba(20,60,120,.12));
+  border:1px solid rgba(90,150,255,.35);
+  color:#dfe6ff;
+  font-weight:600;
+}
+
+/* LAYOUT */
+main{
+  max-width:420px;
+  margin:0 auto;
+  padding:18px 16px 40px;
+}
+.section{margin-bottom:12px}
+.card{
+  border-radius:20px;
+  padding:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,.45);
+}
+
+/* PHASE */
+.phase{
+  background:var(--yellow-bg);
+  border:1px solid var(--yellow-br);
+  text-align:center;
+}
+.phase-title{
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#e6d89a;
+  margin-bottom:6px;
+}
+.phase-text{
+  font-size:14px;
+  line-height:1.55;
+}
+
+/* INFO */
+.info{
+  background:var(--green-bg);
+  border:1px solid var(--green-br);
+}
+.info p{
+  margin:0;
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+}
+
+/* CAPITAL LEVELS */
+.capital-levels{
+  background:linear-gradient(180deg,#0b1430,#050a1f);
+}
+.capital-title{
+  margin:0 0 14px;
+  text-align:center;
+  font-size:22px;
+}
+.capital-desc{
+  margin-bottom:20px;
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+}
+.level-row{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+.level-row:first-child{border-top:none}
+.left{display:flex;flex-direction:column;gap:4px}
+.range{font-weight:600}
+.level-name{font-size:12px;color:#8fa1ff}
+.right{text-align:right}
+.month{font-weight:600}
+.year{font-size:12px;color:var(--muted)}
+
+/* CALCULATOR */
+.calc{
+  background:linear-gradient(180deg,#0b102a,#080d24);
+  border:1px solid var(--border);
+}
+.calc h2{
+  margin:0 0 10px;
+  text-align:center;
+  font-size:20px;
+}
+.calc .desc{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+  margin-bottom:16px;
+}
+.label{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-bottom:6px;
+}
+input[type=range]{width:100%;margin-bottom:14px}
+.checkbox{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:13px;
+  margin-bottom:16px;
+}
+.results{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.box{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+}
+.box .title{
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.box .value{font-size:18px}
+.box.total{border:1.5px solid var(--accent)}
+.note{
+  margin-top:14px;
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.4;
+}
+</style>
+
+<style>
+/* === SCHEME TEXT SCALE OVERRIDE (NO CODE CHANGES) === */
+.card .wrapper{
+  font-size:13px;
+}
+.card .wrapper strong{
+  font-size:14px;
+}
+@media (max-width: 480px){
+  .card .wrapper{
+    font-size:12px;
+  }
+  .card .wrapper strong{
+    font-size:13px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME COMPACT OVERRIDE === */
+section .wrapper{
+  margin:0 auto !important;
+  padding:20px 12px !important;
+}
+
+section .wrapper .block{
+  margin:20px 0 !important;
+  padding:14px 14px !important;
+}
+
+@media (max-width:480px){
+  section .wrapper{
+    padding:16px 8px !important;
+  }
+  section .wrapper .block{
+    margin:14px 0 !important;
+    padding:12px 12px !important;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME RIGHT ALIGN OVERRIDE === */
+/* Контур доступа, Центральный контур управления, Результат */
+#wrapper #access,
+#wrapper #core,
+#wrapper #result{
+  margin-left:auto !important;
+  margin-right:0 !important;
+  text-align:right !important;
+  width:85% !important;
+}
+
+/* Mobile fine-tuning */
+@media (max-width:480px){
+  #wrapper #access,
+  #wrapper #core,
+  #wrapper #result{
+    width:90% !important;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME RIGHT BLOCKS WIDTH 70% === */
+#wrapper #access,
+#wrapper #core,
+#wrapper #result{
+  width:70% !important;
+}
+</style>
+
+
+<style>
+/* === SCHEME SPACING + TYPO REFINEMENT === */
+
+/* Increase vertical spacing so arrows don't overlap blocks */
+#wrapper .block{
+  margin:28px 0 !important;
+}
+
+/* Wrapper breathing space */
+#wrapper{
+  padding-top:28px !important;
+  padding-bottom:28px !important;
+}
+
+/* Typography tuning */
+#wrapper{
+  font-size:12.5px;
+}
+#wrapper strong{
+  font-size:13.5px;
+}
+
+/* Mobile fine tuning */
+@media (max-width:480px){
+  #wrapper .block{
+    margin:24px 0 !important;
+  }
+  #wrapper{
+    font-size:12px;
+  }
+  #wrapper strong{
+    font-size:13px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME TITLE === */
+.scheme-title{
+  margin: 24px 0 16px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e6ecf5;
+}
+@media (max-width:480px){
+  .scheme-title{
+    margin: 20px 0 14px;
+    font-size: 18px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME TITLE INSIDE BLOCK === */
+.scheme-title-inner{
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6ecf5;
+}
+@media (max-width:480px){
+  .scheme-title-inner{
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME TITLE (INSIDE, ABOVE FIRST BLOCK) === */
+.scheme-title-inner{
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6ecf5;
+}
+@media (max-width:480px){
+  .scheme-title-inner{
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME TITLE VISIBILITY FIX === */
+#wrapper{
+  padding-top: 28px !important; /* create space for title */
+}
+
+.scheme-title-inner{
+  display: block !important;
+  position: relative;
+  z-index: 5;
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6ecf5;
+}
+
+@media (max-width:480px){
+  .scheme-title-inner{
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="logo-novavault.png" alt="NovaVault">
+      <span>NovaVault</span>
+    </div>
+    <button class="header-btn">Client access</button>
+  </div>
+</header>
+
+<main>
+
+<section class="section">
+  <div class="card phase">
+    <div class="phase-title">Текущая фаза структуры</div>
+    <div class="phase-text">
+      Осуществляется первичное открытие структуры.<br>
+      Участие рассматривается в рамках долгосрочной модели управления капиталом.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card info">
+    <p>
+      NovaVault является частной инвестиционной структурой, сформированной
+      в соответствии с принципами институционального управления капиталом.
+      Участие носит ограниченный характер и не является публичным предложением.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card capital-levels">
+    <h2 class="capital-title">Уровни размещения капитала</h2>
+    <div class="capital-desc">
+      Доходность формируется в рамках утверждённой инвестиционной модели
+      и отражает особенности управления капиталом при различных объёмах размещения.
+    </div>
+
+    <div class="level-row"><div class="left"><div class="range">$50 – $249</div><div class="level-name">Initial</div></div><div class="right"><div class="month">3.0% / мес</div><div class="year">≈ 36% / год</div></div></div>
+    <div class="level-row"><div class="left"><div class="range">$250 – $999</div><div class="level-name">Core</div></div><div class="right"><div class="month">3.3% / мес</div><div class="year">≈ 40% / год</div></div></div>
+    <div class="level-row"><div class="left"><div class="range">$1,000 – $4,999</div><div class="level-name">Strategic</div></div><div class="right"><div class="month">3.7% / мес</div><div class="year">≈ 44% / год</div></div></div>
+    <div class="level-row"><div class="left"><div class="range">$5,000 – $19,999</div><div class="level-name">Institutional</div></div><div class="right"><div class="month">4.1% / мес</div><div class="year">≈ 49% / год</div></div></div>
+    <div class="level-row"><div class="left"><div class="range">$20,000 – $49,999</div><div class="level-name">Private</div></div><div class="right"><div class="month">4.5% / мес</div><div class="year">≈ 54% / год</div></div></div>
+    <div class="level-row"><div class="left"><div class="range">$50,000+</div><div class="level-name">Individual</div></div><div class="right"><div class="month">Индивидуально</div></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card calc">
+    <h2>Инвестиционный калькулятор</h2>
+    <div class="desc">
+      Используйте калькулятор для моделирования возможных сценариев доходности
+      в зависимости от суммы депозита, срока и реинвестирования.
+    </div>
+
+    <div class="label"><span>Сумма депозита</span><strong id="depVal">$1,000</strong></div>
+    <input id="dep" type="range" min="50" max="50000" step="50" value="1000">
+
+    <div class="label"><span>Срок (мес.)</span><strong id="monVal">6</strong></div>
+    <input id="mon" type="range" min="1" max="24" step="1" value="6">
+
+    <div class="checkbox">
+      <input type="checkbox" id="reinv" checked>
+      <label for="reinv">Реинвестировать ежемесячную прибыль</label>
+    </div>
+
+    <div class="results">
+      <div class="box"><div class="title">Начальный депозит</div><div class="value" id="start">$1,000</div></div>
+      <div class="box"><div class="title">Срок</div><div class="value" id="term">6 мес.</div></div>
+      <div class="box"><div class="title">Чистая прибыль</div><div class="value" id="profit">$244</div></div>
+      <div class="box total"><div class="title">Итоговая сумма</div><div class="value" id="total">$1,244</div></div>
+    </div>
+
+    <div class="note">
+      Расчёты носят ориентировочный характер и предназначены для иллюстрации динамики капитала.
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  
+
+  <!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
 <title>Инвестиционная архитектура NovaVault</title>
 
 <style>
@@ -84,6 +561,199 @@ svg{
   z-index:10;
 }
 </style>
+
+<style>
+/* === SCHEME TEXT SCALE OVERRIDE (NO CODE CHANGES) === */
+.card .wrapper{
+  font-size:13px;
+}
+.card .wrapper strong{
+  font-size:14px;
+}
+@media (max-width: 480px){
+  .card .wrapper{
+    font-size:12px;
+  }
+  .card .wrapper strong{
+    font-size:13px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME COMPACT OVERRIDE === */
+section .wrapper{
+  margin:0 auto !important;
+  padding:20px 12px !important;
+}
+
+section .wrapper .block{
+  margin:20px 0 !important;
+  padding:14px 14px !important;
+}
+
+@media (max-width:480px){
+  section .wrapper{
+    padding:16px 8px !important;
+  }
+  section .wrapper .block{
+    margin:14px 0 !important;
+    padding:12px 12px !important;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME RIGHT ALIGN OVERRIDE === */
+/* Контур доступа, Центральный контур управления, Результат */
+#wrapper #access,
+#wrapper #core,
+#wrapper #result{
+  margin-left:auto !important;
+  margin-right:0 !important;
+  text-align:right !important;
+  width:85% !important;
+}
+
+/* Mobile fine-tuning */
+@media (max-width:480px){
+  #wrapper #access,
+  #wrapper #core,
+  #wrapper #result{
+    width:90% !important;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME RIGHT BLOCKS WIDTH 70% === */
+#wrapper #access,
+#wrapper #core,
+#wrapper #result{
+  width:70% !important;
+}
+</style>
+
+
+<style>
+/* === SCHEME SPACING + TYPO REFINEMENT === */
+
+/* Increase vertical spacing so arrows don't overlap blocks */
+#wrapper .block{
+  margin:28px 0 !important;
+}
+
+/* Wrapper breathing space */
+#wrapper{
+  padding-top:28px !important;
+  padding-bottom:28px !important;
+}
+
+/* Typography tuning */
+#wrapper{
+  font-size:12.5px;
+}
+#wrapper strong{
+  font-size:13.5px;
+}
+
+/* Mobile fine tuning */
+@media (max-width:480px){
+  #wrapper .block{
+    margin:24px 0 !important;
+  }
+  #wrapper{
+    font-size:12px;
+  }
+  #wrapper strong{
+    font-size:13px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME TITLE === */
+.scheme-title{
+  margin: 24px 0 16px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e6ecf5;
+}
+@media (max-width:480px){
+  .scheme-title{
+    margin: 20px 0 14px;
+    font-size: 18px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME TITLE INSIDE BLOCK === */
+.scheme-title-inner{
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6ecf5;
+}
+@media (max-width:480px){
+  .scheme-title-inner{
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME TITLE (INSIDE, ABOVE FIRST BLOCK) === */
+.scheme-title-inner{
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6ecf5;
+}
+@media (max-width:480px){
+  .scheme-title-inner{
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+</style>
+
+
+<style>
+/* === SCHEME TITLE VISIBILITY FIX === */
+#wrapper{
+  padding-top: 28px !important; /* create space for title */
+}
+
+.scheme-title-inner{
+  display: block !important;
+  position: relative;
+  z-index: 5;
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6ecf5;
+}
+
+@media (max-width:480px){
+  .scheme-title-inner{
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -178,6 +848,653 @@ function draw(){
 
 window.addEventListener('load', draw);
 window.addEventListener('resize', draw);
+</script>
+
+
+<script>
+/* === GREEN ARROWS POSITION OVERRIDE: 15% === */
+(function(){
+  if(typeof draw !== 'function') return;
+
+  const originalDraw = draw;
+  window.draw = function(){
+    originalDraw();
+
+    const wrapper = document.getElementById('wrapper');
+    if(!wrapper) return;
+
+    const w = wrapper.getBoundingClientRect();
+    const gap = 18;
+    const xGreen = w.width * 0.15;
+
+    function r(id){ return document.getElementById(id).getBoundingClientRect(); }
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    const g1 = document.getElementById('g1');
+    const g2 = document.getElementById('g2');
+
+    if(g1 && g2){
+      up(g1, r('return'), r('data'));
+      up(g2, r('data'), r('investor'));
+    }
+  };
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+})();
+</script>
+
+
+<script>
+/* === ARROW MARKER SIZE OVERRIDE === */
+window.addEventListener('load', () => {
+  const yellow = document.getElementById('yellowArrow');
+  const green  = document.getElementById('greenArrow');
+
+  if(yellow){
+    yellow.setAttribute('markerWidth', '5');
+    yellow.setAttribute('markerHeight', '5');
+    yellow.setAttribute('refX', '2.5');
+    yellow.setAttribute('refY', '2.5');
+  }
+
+  if(green){
+    green.setAttribute('markerWidth', '5');
+    green.setAttribute('markerHeight', '5');
+    green.setAttribute('refX', '2.5');
+    green.setAttribute('refY', '2.5');
+  }
+});
+</script>
+
+
+<script>
+/* === ARROW MARKER FIX (NO CLIPPING, PROPER GEOMETRY) === */
+window.addEventListener('load', () => {
+  const svg = document.getElementById('arrows');
+  if(!svg) return;
+
+  const defs = svg.querySelector('defs');
+  if(!defs) return;
+
+  function redefineMarker(id, color){
+    const old = document.getElementById(id);
+    if(old) old.remove();
+
+    const m = document.createElementNS('http://www.w3.org/2000/svg','marker');
+    m.setAttribute('id', id);
+    m.setAttribute('markerWidth','6');
+    m.setAttribute('markerHeight','6');
+    m.setAttribute('refX','5');
+    m.setAttribute('refY','3');
+    m.setAttribute('orient','auto');
+    m.setAttribute('markerUnits','strokeWidth');
+    m.setAttribute('viewBox','0 0 6 6');
+
+    const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d','M0,0 L6,3 L0,6 Z');
+    p.setAttribute('fill', color);
+
+    m.appendChild(p);
+    defs.appendChild(m);
+  }
+
+  redefineMarker('yellowArrow','#ffd84d');
+  redefineMarker('greenArrow','#6dff9a');
+
+  // Force redraw so lines reattach markers
+  if(typeof draw === 'function') draw();
+});
+</script>
+
+
+<script>
+/* === ARROW GAP REFINEMENT === */
+(function(){
+  if(typeof draw !== 'function') return;
+
+  const originalDraw = draw;
+
+  window.draw = function(){
+    // call original logic first
+    originalDraw();
+
+    const wrapper = document.getElementById('wrapper');
+    if(!wrapper) return;
+
+    const w = wrapper.getBoundingClientRect();
+    const gap = 8; // was ~18, now tighter
+
+    const xYellow = w.width * 0.75;
+    const xGreen  = w.width * 0.15;
+
+    function r(id){ return document.getElementById(id).getBoundingClientRect(); }
+
+    function down(line, from, to){
+      line.setAttribute('x1', xYellow);
+      line.setAttribute('x2', xYellow);
+      line.setAttribute('y1', from.bottom - w.top + gap);
+      line.setAttribute('y2', to.top - w.top - gap);
+    }
+
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    const y1 = document.getElementById('y1');
+    const y2 = document.getElementById('y2');
+    const y3 = document.getElementById('y3');
+    const y4 = document.getElementById('y4');
+    const y5 = document.getElementById('y5');
+    const g1 = document.getElementById('g1');
+    const g2 = document.getElementById('g2');
+
+    if(y1) down(y1, r('investor'), r('data'));
+    if(y2) down(y2, r('data'), r('access'));
+    if(y3) down(y3, r('access'), r('core'));
+    if(y4) down(y4, r('core'), r('result'));
+    if(y5) down(y5, r('result'), r('return'));
+
+    if(g1) up(g1, r('return'), r('data'));
+    if(g2) up(g2, r('data'), r('investor'));
+  };
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+})();
+</script>
+
+
+<script>
+/* === ARROW GAP ULTRA-TIGHT === */
+(function(){
+  if(typeof draw !== 'function') return;
+
+  const originalDraw = draw;
+
+  window.draw = function(){
+    originalDraw();
+
+    const wrapper = document.getElementById('wrapper');
+    if(!wrapper) return;
+
+    const w = wrapper.getBoundingClientRect();
+    const gap = 3; // almost flush
+
+    const xYellow = w.width * 0.75;
+    const xGreen  = w.width * 0.15;
+
+    function r(id){ return document.getElementById(id).getBoundingClientRect(); }
+
+    function down(line, from, to){
+      line.setAttribute('x1', xYellow);
+      line.setAttribute('x2', xYellow);
+      line.setAttribute('y1', from.bottom - w.top + gap);
+      line.setAttribute('y2', to.top - w.top - gap);
+    }
+
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    const y1 = document.getElementById('y1');
+    const y2 = document.getElementById('y2');
+    const y3 = document.getElementById('y3');
+    const y4 = document.getElementById('y4');
+    const y5 = document.getElementById('y5');
+    const g1 = document.getElementById('g1');
+    const g2 = document.getElementById('g2');
+
+    if(y1) down(y1, r('investor'), r('data'));
+    if(y2) down(y2, r('data'), r('access'));
+    if(y3) down(y3, r('access'), r('core'));
+    if(y4) down(y4, r('core'), r('result'));
+    if(y5) down(y5, r('result'), r('return'));
+
+    if(g1) up(g1, r('return'), r('data'));
+    if(g2) up(g2, r('data'), r('investor'));
+  };
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+})();
+</script>
+
+
+<script>
+/* === ARROW GAP SET TO 6PX === */
+(function(){
+  if(typeof draw !== 'function') return;
+
+  const originalDraw = draw;
+
+  window.draw = function(){
+    originalDraw();
+
+    const wrapper = document.getElementById('wrapper');
+    if(!wrapper) return;
+
+    const w = wrapper.getBoundingClientRect();
+    const gap = 6; // exact value requested
+
+    const xYellow = w.width * 0.75;
+    const xGreen  = w.width * 0.15;
+
+    function r(id){ return document.getElementById(id).getBoundingClientRect(); }
+
+    function down(line, from, to){
+      line.setAttribute('x1', xYellow);
+      line.setAttribute('x2', xYellow);
+      line.setAttribute('y1', from.bottom - w.top + gap);
+      line.setAttribute('y2', to.top - w.top - gap);
+    }
+
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    const ids = ['y1','y2','y3','y4','y5'];
+    ids.forEach((id,i)=>{
+      const el=document.getElementById(id);
+      if(!el) return;
+      const map=[['investor','data'],['data','access'],['access','core'],['core','result'],['result','return']];
+      down(el, r(map[i][0]), r(map[i][1]));
+    });
+
+    const g1 = document.getElementById('g1');
+    const g2 = document.getElementById('g2');
+    if(g1) up(g1, r('return'), r('data'));
+    if(g2) up(g2, r('data'), r('investor'));
+  };
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+})();
+</script>
+
+
+<script>
+/* === ROBUST SCHEME TITLE INJECTION === */
+window.addEventListener('load', () => {
+  const wrapper = document.getElementById('wrapper') || document.querySelector('#wrapper');
+  if(!wrapper) return;
+
+  // If already exists, do nothing
+  if(wrapper.querySelector('.scheme-title-inner')) return;
+
+  const h2 = document.createElement('h2');
+  h2.className = 'scheme-title-inner';
+  h2.textContent = 'Архитектура инвестиционной структуры';
+
+  // Insert as the very first element inside wrapper (above "Источник капитала")
+  wrapper.insertBefore(h2, wrapper.firstChild);
+});
+</script>
+
+</body>
+</html></section>
+
+</main>
+
+<script>
+const dep=document.getElementById('dep');
+const mon=document.getElementById('mon');
+const reinv=document.getElementById('reinv');
+const depVal=document.getElementById('depVal');
+const monVal=document.getElementById('monVal');
+const start=document.getElementById('start');
+const term=document.getElementById('term');
+const profit=document.getElementById('profit');
+const total=document.getElementById('total');
+
+function rate(sum){
+  if(sum<250) return 0.03;
+  if(sum<1000) return 0.033;
+  if(sum<5000) return 0.037;
+  if(sum<20000) return 0.041;
+  if(sum<50000) return 0.045;
+  return 0.05;
+}
+function fmt(v){return '$'+Math.round(v).toLocaleString('en-US');}
+
+function calc(){
+  const s=+dep.value;
+  const m=+mon.value;
+  const r=rate(s);
+
+  let cur=s;
+  let prof=0;
+
+  if(reinv.checked){
+    for(let i=0;i<m;i++){
+      const p=cur*r;
+      cur+=p;
+    }
+    prof=cur-s;
+  }else{
+    prof=s*r*m;
+    cur=s+prof;
+  }
+
+  depVal.textContent=fmt(s);
+  monVal.textContent=m;
+  start.textContent=fmt(s);
+  term.textContent=m+' мес.';
+  total.textContent=fmt(cur);
+  profit.textContent=fmt(prof);
+}
+
+dep.oninput=mon.oninput=reinv.onchange=calc;
+calc();
+</script>
+
+
+<script>
+/* === GREEN ARROWS POSITION OVERRIDE: 15% === */
+(function(){
+  if(typeof draw !== 'function') return;
+
+  const originalDraw = draw;
+  window.draw = function(){
+    originalDraw();
+
+    const wrapper = document.getElementById('wrapper');
+    if(!wrapper) return;
+
+    const w = wrapper.getBoundingClientRect();
+    const gap = 18;
+    const xGreen = w.width * 0.15;
+
+    function r(id){ return document.getElementById(id).getBoundingClientRect(); }
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    const g1 = document.getElementById('g1');
+    const g2 = document.getElementById('g2');
+
+    if(g1 && g2){
+      up(g1, r('return'), r('data'));
+      up(g2, r('data'), r('investor'));
+    }
+  };
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+})();
+</script>
+
+
+<script>
+/* === ARROW MARKER SIZE OVERRIDE === */
+window.addEventListener('load', () => {
+  const yellow = document.getElementById('yellowArrow');
+  const green  = document.getElementById('greenArrow');
+
+  if(yellow){
+    yellow.setAttribute('markerWidth', '5');
+    yellow.setAttribute('markerHeight', '5');
+    yellow.setAttribute('refX', '2.5');
+    yellow.setAttribute('refY', '2.5');
+  }
+
+  if(green){
+    green.setAttribute('markerWidth', '5');
+    green.setAttribute('markerHeight', '5');
+    green.setAttribute('refX', '2.5');
+    green.setAttribute('refY', '2.5');
+  }
+});
+</script>
+
+
+<script>
+/* === ARROW MARKER FIX (NO CLIPPING, PROPER GEOMETRY) === */
+window.addEventListener('load', () => {
+  const svg = document.getElementById('arrows');
+  if(!svg) return;
+
+  const defs = svg.querySelector('defs');
+  if(!defs) return;
+
+  function redefineMarker(id, color){
+    const old = document.getElementById(id);
+    if(old) old.remove();
+
+    const m = document.createElementNS('http://www.w3.org/2000/svg','marker');
+    m.setAttribute('id', id);
+    m.setAttribute('markerWidth','6');
+    m.setAttribute('markerHeight','6');
+    m.setAttribute('refX','5');
+    m.setAttribute('refY','3');
+    m.setAttribute('orient','auto');
+    m.setAttribute('markerUnits','strokeWidth');
+    m.setAttribute('viewBox','0 0 6 6');
+
+    const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d','M0,0 L6,3 L0,6 Z');
+    p.setAttribute('fill', color);
+
+    m.appendChild(p);
+    defs.appendChild(m);
+  }
+
+  redefineMarker('yellowArrow','#ffd84d');
+  redefineMarker('greenArrow','#6dff9a');
+
+  // Force redraw so lines reattach markers
+  if(typeof draw === 'function') draw();
+});
+</script>
+
+
+<script>
+/* === ARROW GAP REFINEMENT === */
+(function(){
+  if(typeof draw !== 'function') return;
+
+  const originalDraw = draw;
+
+  window.draw = function(){
+    // call original logic first
+    originalDraw();
+
+    const wrapper = document.getElementById('wrapper');
+    if(!wrapper) return;
+
+    const w = wrapper.getBoundingClientRect();
+    const gap = 8; // was ~18, now tighter
+
+    const xYellow = w.width * 0.75;
+    const xGreen  = w.width * 0.15;
+
+    function r(id){ return document.getElementById(id).getBoundingClientRect(); }
+
+    function down(line, from, to){
+      line.setAttribute('x1', xYellow);
+      line.setAttribute('x2', xYellow);
+      line.setAttribute('y1', from.bottom - w.top + gap);
+      line.setAttribute('y2', to.top - w.top - gap);
+    }
+
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    const y1 = document.getElementById('y1');
+    const y2 = document.getElementById('y2');
+    const y3 = document.getElementById('y3');
+    const y4 = document.getElementById('y4');
+    const y5 = document.getElementById('y5');
+    const g1 = document.getElementById('g1');
+    const g2 = document.getElementById('g2');
+
+    if(y1) down(y1, r('investor'), r('data'));
+    if(y2) down(y2, r('data'), r('access'));
+    if(y3) down(y3, r('access'), r('core'));
+    if(y4) down(y4, r('core'), r('result'));
+    if(y5) down(y5, r('result'), r('return'));
+
+    if(g1) up(g1, r('return'), r('data'));
+    if(g2) up(g2, r('data'), r('investor'));
+  };
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+})();
+</script>
+
+
+<script>
+/* === ARROW GAP ULTRA-TIGHT === */
+(function(){
+  if(typeof draw !== 'function') return;
+
+  const originalDraw = draw;
+
+  window.draw = function(){
+    originalDraw();
+
+    const wrapper = document.getElementById('wrapper');
+    if(!wrapper) return;
+
+    const w = wrapper.getBoundingClientRect();
+    const gap = 3; // almost flush
+
+    const xYellow = w.width * 0.75;
+    const xGreen  = w.width * 0.15;
+
+    function r(id){ return document.getElementById(id).getBoundingClientRect(); }
+
+    function down(line, from, to){
+      line.setAttribute('x1', xYellow);
+      line.setAttribute('x2', xYellow);
+      line.setAttribute('y1', from.bottom - w.top + gap);
+      line.setAttribute('y2', to.top - w.top - gap);
+    }
+
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    const y1 = document.getElementById('y1');
+    const y2 = document.getElementById('y2');
+    const y3 = document.getElementById('y3');
+    const y4 = document.getElementById('y4');
+    const y5 = document.getElementById('y5');
+    const g1 = document.getElementById('g1');
+    const g2 = document.getElementById('g2');
+
+    if(y1) down(y1, r('investor'), r('data'));
+    if(y2) down(y2, r('data'), r('access'));
+    if(y3) down(y3, r('access'), r('core'));
+    if(y4) down(y4, r('core'), r('result'));
+    if(y5) down(y5, r('result'), r('return'));
+
+    if(g1) up(g1, r('return'), r('data'));
+    if(g2) up(g2, r('data'), r('investor'));
+  };
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+})();
+</script>
+
+
+<script>
+/* === ARROW GAP SET TO 6PX === */
+(function(){
+  if(typeof draw !== 'function') return;
+
+  const originalDraw = draw;
+
+  window.draw = function(){
+    originalDraw();
+
+    const wrapper = document.getElementById('wrapper');
+    if(!wrapper) return;
+
+    const w = wrapper.getBoundingClientRect();
+    const gap = 6; // exact value requested
+
+    const xYellow = w.width * 0.75;
+    const xGreen  = w.width * 0.15;
+
+    function r(id){ return document.getElementById(id).getBoundingClientRect(); }
+
+    function down(line, from, to){
+      line.setAttribute('x1', xYellow);
+      line.setAttribute('x2', xYellow);
+      line.setAttribute('y1', from.bottom - w.top + gap);
+      line.setAttribute('y2', to.top - w.top - gap);
+    }
+
+    function up(line, from, to){
+      line.setAttribute('x1', xGreen);
+      line.setAttribute('x2', xGreen);
+      line.setAttribute('y1', from.top - w.top - gap);
+      line.setAttribute('y2', to.bottom - w.top + gap);
+    }
+
+    const ids = ['y1','y2','y3','y4','y5'];
+    ids.forEach((id,i)=>{
+      const el=document.getElementById(id);
+      if(!el) return;
+      const map=[['investor','data'],['data','access'],['access','core'],['core','result'],['result','return']];
+      down(el, r(map[i][0]), r(map[i][1]));
+    });
+
+    const g1 = document.getElementById('g1');
+    const g2 = document.getElementById('g2');
+    if(g1) up(g1, r('return'), r('data'));
+    if(g2) up(g2, r('data'), r('investor'));
+  };
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+})();
+</script>
+
+
+<script>
+/* === ROBUST SCHEME TITLE INJECTION === */
+window.addEventListener('load', () => {
+  const wrapper = document.getElementById('wrapper') || document.querySelector('#wrapper');
+  if(!wrapper) return;
+
+  // If already exists, do nothing
+  if(wrapper.querySelector('.scheme-title-inner')) return;
+
+  const h2 = document.createElement('h2');
+  h2.className = 'scheme-title-inner';
+  h2.textContent = 'Архитектура инвестиционной структуры';
+
+  // Insert as the very first element inside wrapper (above "Источник капитала")
+  wrapper.insertBefore(h2, wrapper.firstChild);
+});
 </script>
 
 </body>
