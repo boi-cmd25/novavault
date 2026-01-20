@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NovaVault — Mobile</title>
+<title>Nominal Zone</title>
 
 <style>
 :root{
-  --bg:#070c1d;
+  --bg:#060B1C;
   --glass:rgba(12,20,45,0.55);
   --border:rgba(255,255,255,0.08);
   --text:#e6ecf5;
@@ -23,7 +23,7 @@
 *{box-sizing:border-box}
 body{
   margin:0;
-  background:var(--bg);
+  background:#060B1C;
   color:var(--text);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 }
@@ -40,27 +40,34 @@ body{
 .header-inner{
   max-width:420px;
   margin:0 auto;
-  padding:14px 16px 18px;
+  padding:12px 16px;
   display:flex;
-  flex-direction:column;
   align-items:center;
-  gap:10px;
+  justify-content:space-between;
 }
 .brand{
   display:flex;
   align-items:center;
+  gap:0px;
 }
-.brand img{width:64px;height:64px}
-.brand span{font-size:18px;font-weight:600}
+.brand img{width:58px;height:58px}
+.brand span{font-size:16px;font-weight:600}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-sub{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:2px;
+}
 .header-btn{
-  width:100%;
-  max-width:320px;
-  padding:12px;
-  border-radius:18px;
+  width:auto;
+  padding:10px 16px;
+  border-radius:14px;
   background:linear-gradient(180deg,rgba(40,110,200,.18),rgba(20,60,120,.12));
   border:1px solid rgba(90,150,255,.35);
   color:#dfe6ff;
   font-weight:600;
+  font-size:14px;
+  white-space:nowrap;
 }
 
 /* LAYOUT */
@@ -81,6 +88,16 @@ main{
   background:var(--yellow-bg);
   border:1px solid var(--yellow-br);
   text-align:center;
+  position:relative;
+}
+.phase-upd{
+  position:absolute;
+  top:12px;
+  right:14px;
+  margin:0;
+  font-size:10px;
+  letter-spacing:.06em;
+  color:rgba(230,216,154,0.35);
 }
 .phase-title{
   font-size:13px;
@@ -91,13 +108,17 @@ main{
 }
 .phase-text{
   font-size:14px;
-  line-height:1.55;
+  line-height:1.45;
+}
+.phase-text strong{
+  display:block;
+  margin-bottom:4px;
 }
 
 /* INFO */
 .info{
-  background:var(--green-bg);
-  border:1px solid var(--green-br);
+  background:linear-gradient(180deg, rgba(90,160,120,0.22), rgba(40,90,70,0.18));
+  border:1.5px solid rgba(120,200,160,0.55);
 }
 .info p{
   margin:0;
@@ -189,6 +210,66 @@ input[type=range]{width:100%;margin-bottom:14px}
   color:var(--muted);
   line-height:1.4;
 }
+
+/* ===== CLOSING STATEMENT (matched) ===== */
+.closing-block{
+  padding:22px 18px; /* match reference */
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(155,50,70,0.22), rgba(155,50,70,0.08));
+  border:1px solid rgba(200,70,90,0.35);
+  text-align:center;
+  box-shadow:
+    0 0 0 1px rgba(200,70,90,0.15),
+    0 20px 60px rgba(200,70,90,0.18);
+}
+.closing-block h2{
+  margin:0 0 14px;
+  font-size:20px;
+  font-weight:600;
+}
+.closing-block p{
+  margin:0 0 14px;
+  font-size:13px;
+  line-height:1.55;
+  color:var(--muted);
+}
+.closing-block p:last-child{ margin-bottom:0; }
+
+
+/* === Closing text color ONLY (scoped) === */
+.closing-scope h2,
+.closing-scope .closing-title{
+  color:#ffffff !important;
+}
+.closing-scope p{
+  color: rgba(255, 190, 190, 0.88) !important;
+}
+
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 <style>
@@ -207,6 +288,31 @@ input[type=range]{width:100%;margin-bottom:14px}
     font-size:13px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -231,6 +337,31 @@ section .wrapper .block{
     padding:12px 12px !important;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -254,6 +385,31 @@ section .wrapper .block{
     width:90% !important;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -264,6 +420,31 @@ section .wrapper .block{
 #wrapper #result{
   width:70% !important;
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -301,6 +482,31 @@ section .wrapper .block{
     font-size:13px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -319,6 +525,31 @@ section .wrapper .block{
     font-size: 18px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -337,6 +568,31 @@ section .wrapper .block{
     margin-bottom: 16px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -355,6 +611,31 @@ section .wrapper .block{
     margin-bottom: 16px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -381,30 +662,359 @@ section .wrapper .block{
     margin-bottom: 16px;
   }
 }
+
+/* ===== SECURITY BLOCK (FINAL MATCH) ===== */
+.security-wrap{
+  max-width:420px;
+  margin:0 auto;
+  padding:24px 16px 40px;
+}
+.security-block{
+  background:linear-gradient(180deg,#0b1430,#050a1f);
+  border-radius:20px;
+  padding:20px 16px 18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.45);
+}
+.security-block h2{
+  margin:0 0 14px;
+  text-align:center;
+  font-size:22px;
+  font-weight:600;
+}
+.security-lead{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+.security-items{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.security-item{
+  background:rgba(255,255,255,.04);
+  border-radius:14px;
+  padding:14px;
+}
+.security-item h3{
+  margin:0 0 6px;
+  font-size:15px;
+  font-weight:600;
+}
+.security-item p{
+  margin:0;
+  font-size:13px;
+  line-height:1.45;
+  color:var(--muted);
+}
+.security-note{
+  margin-top:14px;
+  font-size:12px;
+  line-height:1.45;
+  color:var(--muted);
+}
+.security-terms{
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.security-terms h4{
+  margin:0 0 6px;
+  font-size:14px;
+}
+.security-terms p{
+  margin:0;
+  font-size:12px;
+  line-height:1.45;
+  color:var(--muted);
+}
+
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
+
+<style>
+/* spacing fix v2: force gap before closing */
+.closing-block{ margin-top: 32px !important; }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
+</style>
+
+
+<style>
+:root{
+  --bg:#060B1C;
+  --text:#e6ecf5;
+  --muted:#9fb0c8;
+  --accent:#4f7cff;
+  --border:rgba(255,255,255,0.08);
+}
+
+/* PAGE */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  min-height:200vh; /* just to test sticky */
+}
+
+/* ===== HEADER (RESET, ISOLATED) ===== */
+.nz-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  /* A — dense institutional glass, color A */
+  background:linear-gradient(
+    180deg,
+    rgba(10,18,48,0.88) 0%,
+    rgba(7,13,34,0.92) 100%
+  );
+  backdrop-filter: blur(12px) saturate(115%);
+  -webkit-backdrop-filter: blur(12px) saturate(115%);
+
+  border-bottom:1px solid var(--border);
+}
+
+.nz-header-inner{
+  max-width:420px;
+  margin:0 auto;
+  padding:12px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+/* BRAND */
+.nz-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.nz-brand img{
+  width:40px;
+  height:40px;
+}
+.nz-brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
+}
+.nz-brand-name{
+  font-size:15px;
+  font-weight:600;
+}
+.nz-brand-sub{
+  font-size:11px;
+  color:var(--muted);
+}
+
+/* ACTIONS */
+.nz-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* BUTTONS — flat, accent on interaction */
+.nz-btn{
+  padding:8px 14px;
+  border-radius:10px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.22);
+  color:var(--text);
+  font-size:13px;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .18s ease;
+}
+
+.nz-btn:hover,
+.nz-btn:focus{
+  border-color:var(--accent);
+  color:#ffffff;
+  box-shadow:0 0 0 2px rgba(79,124,255,0.25);
+}
+
+/* LANGUAGE */
+.nz-lang{
+  position:relative;
+}
+.nz-lang-list{
+  position:absolute;
+  top:44px;
+  right:0;
+  width:100%;              /* dropdown = button width */
+  background:#0b1333;
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  display:none;
+}
+.nz-lang.open .nz-lang-list{ display:block; }
+
+.nz-lang-list div{
+  padding:8px 0;
+  text-align:center;
+  font-size:13px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.nz-lang-list div:hover{
+  background:rgba(255,255,255,0.08);
+}
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
+</style>
 </head>
 
 <body>
+<header class="nz-header">
+  <div class="nz-header-inner">
 
-<header class="header">
-  <div class="header-inner">
-    <div class="brand">
-      <img src="logo-novavault.png" alt="NovaVault">
-      <span>NovaVault</span>
+    <div class="nz-brand">
+      <img src="logo-nominalzone.png" alt="Nominal Zone" />
+      <div class="nz-brand-text">
+        <span class="nz-brand-name">Nominal Zone</span>
+        <span class="nz-brand-sub">Private capital structure</span>
+      </div>
     </div>
-    <button class="header-btn">Client access</button>
+
+    <div class="nz-actions">
+      <button class="nz-btn nz-btn-primary">Client access</button>
+
+      <div class="nz-lang">
+        <button class="nz-btn" id="langBtn">EN</button>
+        <div class="nz-lang-list">
+          <div data-lang="EN">EN</div>
+          <div data-lang="RU">RU</div>
+          <div data-lang="UA">UA</div>
+          <div data-lang="DE">DE</div>
+          <div data-lang="FR">FR</div>
+          <div data-lang="ES">ES</div>
+          <div data-lang="IT">IT</div>
+          <div data-lang="PL">PL</div>
+          <div data-lang="TR">TR</div>
+          <div data-lang="ZH">ZH</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </header>
+<script>
+const langWrap = document.querySelector('.nz-lang');
+const langBtn  = document.getElementById('langBtn');
+
+langBtn.addEventListener('click', e => {
+  e.stopPropagation();
+  langWrap.classList.toggle('open');
+});
+
+document.querySelectorAll('.nz-lang-list div').forEach(item => {
+  item.addEventListener('click', () => {
+    const code = item.dataset.lang;
+    langBtn.textContent = code;
+    langWrap.classList.remove('open');
+
+    // future hook for full site language switch
+    document.documentElement.setAttribute('lang', code.toLowerCase());
+  });
+});
+
+document.addEventListener('click', () => {
+  langWrap.classList.remove('open');
+});
+</script>
+
+
+
 
 <main>
 
 <section class="section">
   <div class="card phase">
-    <div class="phase-title">Текущая фаза структуры</div>
+    <div class="phase-title">Статус структуры</div>
     <div class="phase-text">
-      Осуществляется первичное открытие структуры.<br>
-      Участие рассматривается в рамках долгосрочной модели управления капиталом.
+      <strong>Фаза первичного открытия</strong>
+      Формируется начальный контур участников.<br>
+      Рассматривается ограниченное подключение в рамках
+      долгосрочной модели управления капиталом.
+      <div class="phase-upd">upd: 20.01.2026</div>
     </div>
   </div>
 </section>
@@ -412,7 +1022,7 @@ section .wrapper .block{
 <section class="section">
   <div class="card info">
     <p>
-      NovaVault является частной инвестиционной структурой, сформированной
+      <strong>Nominal Zone</strong> является частной инвестиционной структурой, сформированной
       в соответствии с принципами институционального управления капиталом.
       Участие носит ограниченный характер и не является публичным предложением.
     </p>
@@ -462,7 +1072,7 @@ section .wrapper .block{
       <div class="box total"><div class="title">Итоговая сумма</div><div class="value" id="total">$1,244</div></div>
     </div>
 
-    <div class="note">
+    <div class="security-note">
       Расчёты носят ориентировочный характер и предназначены для иллюстрации динамики капитала.
     </div>
   </div>
@@ -479,13 +1089,13 @@ section .wrapper .block{
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Инвестиционная архитектура NovaVault</title>
+<title>Инвестиционная архитектура Nominal Zone</title>
 
 <style>
 body{
   margin:0;
   font-family:Inter,system-ui,sans-serif;
-  background:radial-gradient(circle at top,#141a3a,#080b1c 70%);
+  background:#060B1C;
   color:#e8ebff;
 }
 
@@ -560,6 +1170,31 @@ svg{
   pointer-events:none;
   z-index:10;
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 <style>
@@ -578,6 +1213,31 @@ svg{
     font-size:13px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -602,6 +1262,31 @@ section .wrapper .block{
     padding:12px 12px !important;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -625,6 +1310,31 @@ section .wrapper .block{
     width:90% !important;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -635,6 +1345,31 @@ section .wrapper .block{
 #wrapper #result{
   width:70% !important;
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -672,6 +1407,31 @@ section .wrapper .block{
     font-size:13px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -690,6 +1450,31 @@ section .wrapper .block{
     font-size: 18px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -708,6 +1493,31 @@ section .wrapper .block{
     margin-bottom: 16px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -726,6 +1536,31 @@ section .wrapper .block{
     margin-bottom: 16px;
   }
 }
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 
@@ -752,6 +1587,99 @@ section .wrapper .block{
     margin-bottom: 16px;
   }
 }
+
+/* ===== SECURITY BLOCK (FINAL MATCH) ===== */
+.security-wrap{
+  max-width:420px;
+  margin:0 auto;
+  padding:24px 16px 40px;
+}
+.security-block{
+  background:linear-gradient(180deg,#0b1430,#050a1f);
+  border-radius:20px;
+  padding:20px 16px 18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.45);
+}
+.security-block h2{
+  margin:0 0 14px;
+  text-align:center;
+  font-size:22px;
+  font-weight:600;
+}
+.security-lead{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+.security-items{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.security-item{
+  background:rgba(255,255,255,.04);
+  border-radius:14px;
+  padding:14px;
+}
+.security-item h3{
+  margin:0 0 6px;
+  font-size:15px;
+  font-weight:600;
+}
+.security-item p{
+  margin:0;
+  font-size:13px;
+  line-height:1.45;
+  color:var(--muted);
+}
+.security-note{
+  margin-top:14px;
+  font-size:12px;
+  line-height:1.45;
+  color:var(--muted);
+}
+.security-terms{
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.security-terms h4{
+  margin:0 0 6px;
+  font-size:14px;
+}
+.security-terms p{
+  margin:0;
+  font-size:12px;
+  line-height:1.45;
+  color:var(--muted);
+}
+
+
+.nz-btn-primary{
+  background: #4f7cff;
+  border-color: #4f7cff !important;
+  color:#ffffff;
+}
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: #5f8dff;
+}
+
+
+/* Client access — institutional glass (FINAL) */
+.nz-btn-primary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(120,160,255,0.55);
+  color: #ffffff;
+}
+
+.nz-btn-primary:hover,
+.nz-btn-primary:focus{
+  background: rgba(120,160,255,0.12);
+  border-color: rgba(120,160,255,0.85);
+}
+
 </style>
 
 </head>
@@ -1147,6 +2075,118 @@ window.addEventListener('load', () => {
 
 </body>
 </html></section>
+
+
+<!-- SECURITY BLOCK -->
+
+
+  <div class="security-block">
+
+    <h2>Безопасность и конфиденциальность</h2>
+
+    <div class="security-lead">
+      Nominal Zone изначально проектировался с приоритетом конфиденциальности, контроля доступа и защиты
+      финансовых интересов инвестора. Мы используем подходы, характерные для private banking и
+      альтернативных инвестиционных структур.
+    </div>
+
+    <div class="security-items">
+
+      <div class="security-item">
+        <h3>Конфиденциальность данных</h3>
+        <p>
+          Персональная информация, параметры капитала и инвестиционная активность не передаются третьим
+          лицам и не публикуются в открытых источниках.
+        </p>
+      </div>
+
+      <div class="security-item">
+        <h3>Приватный формат участия</h3>
+        <p>
+          Участие не предполагает публичной экспозиции капитала. Взаимодействие осуществляется напрямую,
+          без публичных реестров и посредников.
+        </p>
+      </div>
+
+      <div class="security-item">
+        <h3>Отсутствие автоматической отчётности</h3>
+        <p>
+          Nominal Zone не осуществляет автоматическую передачу информации в финансовый мониторинг,
+          налоговые органы или сторонние отчётные системы.
+        </p>
+      </div>
+
+      <div class="security-item">
+        <h3>Архитектура безопасности</h3>
+        <p>
+          Ограниченный доступ к данным, разделение операционных и аналитических уровней и минимизация
+          цифрового следа являются частью базовой архитектуры системы.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="security-note">
+      Финансовая приватность рассматривается как неотъемлемая часть инвестиционной свободы и контроля
+      над капиталом.
+    </div>
+
+    <div class="security-note">
+      Архитектура Nominal Zone выстроена таким образом, чтобы исключить концентрацию операционных,
+      технических и управленческих рисков в одной точке. Все процессы распределены по независимым
+      контурам, что снижает уязвимость системы и повышает устойчивость инвестиционной модели.
+    </div>
+
+    <div class="security-note">
+      Управление капиталом осуществляется в рамках заранее определённых параметров, включая лимиты
+      экспозиции, сценарии перераспределения и условия завершения инвестиционного цикла.
+    </div>
+
+    <div class="security-note">
+      Nominal Zone не использует агрессивные методы привлечения капитала, автоматизированные стратегии
+      с неконтролируемым риском или механизмы, предполагающие обязательное вовлечение новых участников.
+    </div>
+
+    <div class="security-note">
+      Инвестор сохраняет контроль над принятием ключевых решений и рассматривается как независимая
+      сторона инвестиционного процесса.
+    </div>
+
+    <div class="security-note">
+      Все взаимодействия в рамках Nominal Zone носят закрытый характер и осуществляются в пределах
+      согласованной инвестиционной структуры.
+    </div>
+
+    <div class="security-terms">
+      <h4>Юридическое уведомление</h4>
+      <p>
+        Nominal Zone не предоставляет юридических, налоговых или бухгалтерских консультаций. Инвестор
+        самостоятельно принимает решения в соответствии с требованиями своей юрисдикции.
+      </p>
+    </div>
+
+  </div>
+
+
+
+<!-- CLOSING SECTION -->
+<section class="section closing-scope">
+  <div class="card closing-block">
+    <h2>Заключительное положение</h2>
+    <p>
+      Nominal Zone рассматривается как закрытая инвестиционная структура,
+      ориентированная на дисциплинированное управление капиталом и долгосрочную устойчивость.
+    </p>
+    <p>
+      Материалы, представленные на сайте, носят информационный характер
+      и не являются индивидуальной инвестиционной рекомендацией.
+    </p>
+    <p>
+      Принятие инвестиционных решений осуществляется инвестором самостоятельно
+      с учетом собственных целей, оценки рисков и требований применимого законодательства.
+    </p>
+  </div>
+</section>
 
 </main>
 
