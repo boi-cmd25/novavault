@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominal Zone — Регистрация</title>
+  <meta name="description" content="Nominal Zone preview" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="register">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Nominal Zone</span>
+          <span class="brand-sub">Private capital structure</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
+        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
+        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
+        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
+        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
+        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-section">
+    <div class="container page-grid">
+      <section class="page-title-wrap">
+        <span class="kicker">Nominal Zone preview</span>
+        <h1 class="page-title">Заявка на подключение нового участника</h1>
+        <p class="page-subtitle">Страница регистрации должна выглядеть дорого, спокойно и без ощущения масс-маркета. Тут смотри поля, структуру и общий тон.</p>
+      </section>
+
+
+    <section class="form-card">
+      <div class="section-head">
+        <span class="kicker">Registration request</span>
+        <h2>Форма подключения</h2>
+        <p>Заполнение заявки на рассмотрение и получение доступа к структуре.</p>
+      </div>
+
+      <div class="field-grid cols-2">
+        <div class="field"><label>Имя</label><input type="text" placeholder="Иван" /></div>
+        <div class="field"><label>Фамилия</label><input type="text" placeholder="Иванов" /></div>
+        <div class="field"><label>Дата рождения</label><input type="date" /></div>
+        <div class="field"><label>Телефон</label><input type="text" placeholder="+380..." /></div>
+        <div class="field"><label>Telegram</label><input type="text" placeholder="@username" /></div>
+        <div class="field"><label>Страна</label><input type="text" placeholder="Украина" /></div>
+        <div class="field"><label>Ориентировочный уровень</label>
+          <select>
+            <option>Initial</option>
+            <option>Core</option>
+            <option>Strategic</option>
+            <option>Private</option>
+            <option>Individual</option>
+          </select>
+        </div>
+        <div class="field"><label>Email</label><input type="email" placeholder="mail@example.com" /></div>
+      </div>
+
+      <div class="field" style="margin-top:14px;">
+        <label>Комментарий</label>
+        <textarea placeholder="Кратко опишите запрос на подключение"></textarea>
+      </div>
+
+      <div class="button-row" style="margin-top:16px;">
+        <button class="btn-primary" type="button">Отправить заявку</button>
+        <a class="btn-secondary" href="login.html">У меня уже есть доступ</a>
+      </div>
+    </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Nominal Zone</strong>
+        <span>Preview for GitHub Pages</span>
+      </div>
+      <span>Просмотр с телефона / проверка интерфейса</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

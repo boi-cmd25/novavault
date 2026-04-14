@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominal Zone — История</title>
+  <meta name="description" content="Nominal Zone preview" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Nominal Zone</span>
+          <span class="brand-sub">Private capital structure</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
+        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
+        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
+        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
+        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
+        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-section">
+    <div class="container page-grid">
+      <section class="page-title-wrap">
+        <span class="kicker">Nominal Zone preview</span>
+        <h1 class="page-title">История операций</h1>
+        <p class="page-subtitle">Здесь смотри удобство списка, фильтры и общую читаемость ленты с телефона. Если таблица неудобна на мобильном, это место первым начнет раздражать.</p>
+      </section>
+
+
+    <section class="card">
+      <div class="section-head">
+        <span class="kicker">Фильтры</span>
+        <h2>Отбор операций</h2>
+      </div>
+      <div class="field-grid cols-2">
+        <div class="field">
+          <label>Тип операции</label>
+          <select>
+            <option>Все операции</option>
+            <option>Пополнения</option>
+            <option>Начисления</option>
+            <option>Выводы</option>
+            <option>Реинвестирование</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Период</label>
+          <select>
+            <option>Последние 7 дней</option>
+            <option>Последние 30 дней</option>
+            <option>За весь период</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="history-list">
+      <div class="history-item">
+        <div class="item-top"><span class="item-title">Ежедневное начисление</span><span class="pill success">+24.86 USDT</span></div>
+        <div class="row-note">14.04.2026 / Автоматическое начисление</div>
+        <div class="item-text">Результат за расчетный день отражен в кабинете и добавлен к доступным процентам.</div>
+      </div>
+      <div class="history-item">
+        <div class="item-top"><span class="item-title">Вывод начисленных процентов</span><span class="pill">350.00 USDT</span></div>
+        <div class="row-note">14.04.2026 / Исполнено</div>
+        <div class="item-text">Часть начисленного результата отправлена на внешний адрес получения.</div>
+      </div>
+      <div class="history-item">
+        <div class="item-top"><span class="item-title">Реинвестирование</span><span class="pill warn">1 000.00 USDT</span></div>
+        <div class="row-note">12.04.2026 / Подтверждено</div>
+        <div class="item-text">Сумма переведена в новую часть депозита для увеличения участия.</div>
+      </div>
+      <div class="history-item">
+        <div class="item-top"><span class="item-title">Пополнение</span><span class="pill success">5 000.00 USDT</span></div>
+        <div class="row-note">09.04.2026 / Подтверждено</div>
+        <div class="item-text">Новая сумма размещения зафиксирована и включена в структуру участия.</div>
+      </div>
+    </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Nominal Zone</strong>
+        <span>Preview for GitHub Pages</span>
+      </div>
+      <span>Просмотр с телефона / проверка интерфейса</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

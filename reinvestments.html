@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominal Zone — Реинвестирование</title>
+  <meta name="description" content="Nominal Zone preview" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Nominal Zone</span>
+          <span class="brand-sub">Private capital structure</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
+        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
+        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
+        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
+        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
+        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-section">
+    <div class="container page-grid">
+      <section class="page-title-wrap">
+        <span class="kicker">Nominal Zone preview</span>
+        <h1 class="page-title">Перевод начисленных процентов в депозит</h1>
+        <p class="page-subtitle">Страница должна визуально показывать логику роста: что доступно для реинвестирования, что будет после подтверждения, как изменится сумма участия.</p>
+      </section>
+
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <span>Доступно процентов</span>
+        <strong>1 286.42 USDT</strong>
+      </article>
+      <article class="metric-card">
+        <span>Текущий депозит</span>
+        <strong>18 500.00 USDT</strong>
+      </article>
+      <article class="metric-card emphasis">
+        <span>После реинвестирования</span>
+        <strong>19 500.00 USDT</strong>
+      </article>
+      <article class="metric-card soft">
+        <span>Старт действия суммы</span>
+        <strong>Со следующих суток</strong>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <div class="form-card">
+        <div class="section-head">
+          <span class="kicker">Reinvestment</span>
+          <h2>Создать заявку</h2>
+        </div>
+
+        <div class="field-grid">
+          <div class="field"><label>Сумма реинвестирования</label><input type="number" value="1000" /></div>
+          <div class="field"><label>Комментарий</label><textarea placeholder="Комментарий к заявке"></textarea></div>
+        </div>
+
+        <div class="button-row" style="margin-top:16px;">
+          <button class="btn-primary" type="button">Направить в реинвестирование</button>
+          <button class="btn-secondary" type="button">Рассчитать сумму после перевода</button>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <div class="section-head">
+          <span class="kicker">Preview</span>
+          <h3>Как это выглядит</h3>
+        </div>
+        <div class="side-item"><strong>До операции</strong><span class="item-text">Начисленные проценты доступны для вывода или роста депозита.</span></div>
+        <div class="side-item"><strong>После подтверждения</strong><span class="item-text">Создается новая часть депозита, которая включается в работу со следующего периода.</span></div>
+      </aside>
+    </section>
+
+    <section class="table-card">
+      <div class="section-head">
+        <span class="kicker">История реинвестирования</span>
+        <h2>Последние операции</h2>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Дата</th><th>Сумма</th><th>Статус</th><th>Комментарий</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>12.04.2026</td><td>1 000.00 USDT</td><td><span class="pill success">Подтверждено</span></td><td>Перевод начисленных процентов в депозит</td></tr>
+          <tr><td>05.04.2026</td><td>600.00 USDT</td><td><span class="pill">Исполнено</span></td><td>Частичный перевод результата</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Nominal Zone</strong>
+        <span>Preview for GitHub Pages</span>
+      </div>
+      <span>Просмотр с телефона / проверка интерфейса</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

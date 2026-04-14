@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominal Zone — Кабинет</title>
+  <meta name="description" content="Nominal Zone preview" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Nominal Zone</span>
+          <span class="brand-sub">Private capital structure</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
+        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
+        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
+        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
+        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
+        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-section">
+    <div class="container page-grid">
+      <section class="page-title-wrap">
+        <span class="kicker">Nominal Zone preview</span>
+        <h1 class="page-title">Личный кабинет участника</h1>
+        <p class="page-subtitle">Главная страница кабинета должна сразу показывать сумму, начисленные проценты, итоговую доступность и ленту последних движений. Смотри здесь общую композицию и читаемость первого экрана.</p>
+      </section>
+
+
+    <section class="metric-grid">
+      <article class="metric-card emphasis">
+        <span>Основной депозит</span>
+        <strong>18 500.00 USDT</strong>
+      </article>
+      <article class="metric-card">
+        <span>Начисленные проценты</span>
+        <strong>1 286.42 USDT</strong>
+      </article>
+      <article class="metric-card soft">
+        <span>Доступно всего</span>
+        <strong>19 786.42 USDT</strong>
+      </article>
+      <article class="metric-card">
+        <span>Примерный ежедневный процент</span>
+        <strong>0.14%</strong>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <div class="chart-card">
+        <div class="section-head">
+          <span class="kicker">Динамика</span>
+          <h2>Рост суммы</h2>
+          <p>Желтая линия — депозит, синяя линия — депозит с начисленными процентами.</p>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><i class="legend-dot gold"></i>Депозит</span>
+          <span class="legend-item"><i class="legend-dot blue"></i>Депозит + начисления</span>
+        </div>
+        <div class="chart-canvas">
+          <svg class="curve" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0,62 C10,60 18,58 28,57 C42,56 54,55 68,54 C81,53 90,52 100,50" fill="none" stroke="#efc85b" stroke-width="2.2"/>
+            <path d="M0,70 C12,66 20,63 32,59 C45,55 58,50 72,45 C84,40 92,36 100,28" fill="none" stroke="#85bfff" stroke-width="2.2"/>
+          </svg>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <div class="section-head">
+          <span class="kicker">Быстрые действия</span>
+          <h3>Навигация по кабинету</h3>
+        </div>
+
+        <a class="side-item" href="topup.html">
+          <strong>Пополнение</strong>
+          <span class="item-text">Создание новой заявки и просмотр активных пополнений.</span>
+        </a>
+        <a class="side-item" href="withdrawals.html">
+          <strong>Вывод</strong>
+          <span class="item-text">Вывод начисленных процентов или части основного депозита.</span>
+        </a>
+        <a class="side-item" href="reinvestments.html">
+          <strong>Реинвестирование</strong>
+          <span class="item-text">Перевод начисленных процентов в новую часть депозита.</span>
+        </a>
+        <a class="side-item" href="history.html">
+          <strong>История операций</strong>
+          <span class="item-text">Детальная лента движений с фильтрацией.</span>
+        </a>
+      </aside>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <span class="kicker">Последние операции</span>
+        <h2>Лента активности</h2>
+      </div>
+
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="item-top"><span class="item-title">Ежедневное начисление</span><span class="pill success">+24.86 USDT</span></div>
+          <div class="item-text">Суточное отражение результата за текущий расчетный период.</div>
+        </div>
+        <div class="activity-item">
+          <div class="item-top"><span class="item-title">Реинвестирование</span><span class="pill warn">1 000.00 USDT</span></div>
+          <div class="item-text">Часть начисленных процентов переведена в новую депозитную часть.</div>
+        </div>
+        <div class="activity-item">
+          <div class="item-top"><span class="item-title">Пополнение</span><span class="pill">5 000.00 USDT</span></div>
+          <div class="item-text">Подтверждено и отражено как новая активная часть участия.</div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Nominal Zone</strong>
+        <span>Preview for GitHub Pages</span>
+      </div>
+      <span>Просмотр с телефона / проверка интерфейса</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

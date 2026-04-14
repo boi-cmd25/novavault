@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominal Zone — Поддержка</title>
+  <meta name="description" content="Nominal Zone preview" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="support">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Nominal Zone</span>
+          <span class="brand-sub">Private capital structure</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
+        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
+        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
+        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
+        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
+        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-section">
+    <div class="container page-grid">
+      <section class="page-title-wrap">
+        <span class="kicker">Nominal Zone preview</span>
+        <h1 class="page-title">Поддержка и форма обращения</h1>
+        <p class="page-subtitle">Эта страница должна быть очень спокойной и чистой. Тут важно, чтобы человек не чувствовал перегруженности: сразу видна форма, контакты и формат обращения.</p>
+      </section>
+
+
+    <section class="grid-2">
+      <div class="form-card">
+        <div class="section-head">
+          <span class="kicker">Support request</span>
+          <h2>Новое обращение</h2>
+          <p>Опиши вопрос, и запрос будет передан в обработку через кабинет.</p>
+        </div>
+
+        <div class="field-grid">
+          <div class="field"><label>Тема обращения</label><input type="text" placeholder="Кратко опишите тему" /></div>
+          <div class="field"><label>Сообщение</label><textarea placeholder="Опишите вопрос подробнее"></textarea></div>
+        </div>
+
+        <div class="button-row" style="margin-top:16px;">
+          <button class="btn-primary" type="button">Отправить обращение</button>
+          <button class="btn-secondary" type="button">Открыть переписку</button>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <div class="section-head">
+          <span class="kicker">Каналы связи</span>
+          <h3>Контакты поддержки</h3>
+        </div>
+
+        <div class="side-item">
+          <strong>Telegram</strong>
+          <span class="item-text">@nominalzone</span>
+        </div>
+        <div class="side-item">
+          <strong>Email</strong>
+          <span class="item-text">support@nominalzone.com</span>
+        </div>
+        <div class="side-item">
+          <strong>Формат</strong>
+          <span class="item-text">Основной канал — обращение из кабинета с сохранением истории переписки.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="ticket-list">
+      <div class="ticket-item">
+        <div class="item-top"><span class="item-title">Проверка вывода</span><span class="pill warn">В работе</span></div>
+        <div class="item-text">Запрос по текущей заявке на вывод основной суммы.</div>
+      </div>
+      <div class="ticket-item">
+        <div class="item-top"><span class="item-title">Вопрос по реинвестированию</span><span class="pill success">Есть ответ</span></div>
+        <div class="item-text">Разъяснение по дате включения новой суммы в расчетный период.</div>
+      </div>
+    </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Nominal Zone</strong>
+        <span>Preview for GitHub Pages</span>
+      </div>
+      <span>Просмотр с телефона / проверка интерфейса</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

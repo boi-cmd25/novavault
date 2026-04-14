@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominal Zone — Профиль</title>
+  <meta name="description" content="Nominal Zone preview" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Nominal Zone</span>
+          <span class="brand-sub">Private capital structure</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
+        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
+        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
+        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
+        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
+        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-section">
+    <div class="container page-grid">
+      <section class="page-title-wrap">
+        <span class="kicker">Nominal Zone preview</span>
+        <h1 class="page-title">Профиль и настройки</h1>
+        <p class="page-subtitle">Страница профиля нужна для просмотра личных данных, параметров отображения и уведомлений. Смотри удобство секций и визуальный баланс.</p>
+      </section>
+
+
+    <section class="grid-2">
+      <div class="form-card">
+        <div class="section-head">
+          <span class="kicker">Profile</span>
+          <h2>Личные данные</h2>
+        </div>
+
+        <div class="field-grid cols-2">
+          <div class="field"><label>Имя</label><input type="text" value="Ivan" /></div>
+          <div class="field"><label>Фамилия</label><input type="text" value="Investor" /></div>
+          <div class="field"><label>Дата рождения</label><input type="date" value="1995-05-10" /></div>
+          <div class="field"><label>Телефон</label><input type="text" value="+380501112233" /></div>
+          <div class="field"><label>Email</label><input type="email" value="ivan@example.com" /></div>
+          <div class="field"><label>Telegram</label><input type="text" value="@ivan_preview" /></div>
+        </div>
+
+        <div class="button-row" style="margin-top:16px;">
+          <button class="btn-primary" type="button">Сохранить изменения</button>
+          <button class="btn-secondary" type="button">Обновить доступ</button>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <div class="section-head">
+          <span class="kicker">Settings</span>
+          <h3>Параметры кабинета</h3>
+        </div>
+
+        <div class="side-item"><strong>Язык</strong><span class="item-text">Русский</span></div>
+        <div class="side-item"><strong>Часовой пояс</strong><span class="item-text">Europe/Uzhgorod</span></div>
+        <div class="side-item"><strong>Отображение</strong><span class="item-text">USDT / USD equivalent</span></div>
+        <div class="side-item"><strong>Уведомления</strong><span class="item-text">Начисления / Пополнения / Вывод / Реинвестирование</span></div>
+      </aside>
+    </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Nominal Zone</strong>
+        <span>Preview for GitHub Pages</span>
+      </div>
+      <span>Просмотр с телефона / проверка интерфейса</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

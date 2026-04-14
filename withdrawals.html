@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominal Zone — Вывод</title>
+  <meta name="description" content="Nominal Zone preview" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Nominal Zone</span>
+          <span class="brand-sub">Private capital structure</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
+        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
+        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
+        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
+        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
+        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-section">
+    <div class="container page-grid">
+      <section class="page-title-wrap">
+        <span class="kicker">Nominal Zone preview</span>
+        <h1 class="page-title">Вывод начисленных процентов и части депозита</h1>
+        <p class="page-subtitle">Эта страница должна быть особенно понятной. Здесь важно проверить не только визуал, но и восприятие логики: где вывод процентов, где вывод депозита, как показывается штраф и итоговая сумма.</p>
+      </section>
+
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <span>Доступно начисленных процентов</span>
+        <strong>1 286.42 USDT</strong>
+      </article>
+      <article class="metric-card">
+        <span>Доступно из депозита</span>
+        <strong>18 500.00 USDT</strong>
+      </article>
+      <article class="metric-card emphasis">
+        <span>Штраф при досрочном выводе</span>
+        <strong>2%</strong>
+      </article>
+      <article class="metric-card">
+        <span>Сеть вывода</span>
+        <strong>TRC20</strong>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <div class="form-card">
+        <div class="section-head">
+          <span class="kicker">Withdrawal</span>
+          <h2>Новая заявка на вывод</h2>
+        </div>
+
+        <div class="field-grid cols-2">
+          <div class="field">
+            <label>Тип вывода</label>
+            <select>
+              <option>Начисленные проценты</option>
+              <option>Часть депозита</option>
+            </select>
+          </div>
+          <div class="field"><label>Сумма</label><input type="number" value="500" /></div>
+          <div class="field"><label>Актив</label><select><option>USDT</option></select></div>
+          <div class="field"><label>Сеть</label><select><option>TRC20</option></select></div>
+          <div class="field" style="grid-column: 1 / -1;"><label>Адрес получения</label><input type="text" placeholder="T.... wallet address" /></div>
+        </div>
+
+        <div class="button-row" style="margin-top:16px;">
+          <button class="btn-primary" type="button">Создать заявку</button>
+          <button class="btn-secondary" type="button">Показать breakdown</button>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <div class="section-head">
+          <span class="kicker">Расчет</span>
+          <h3>Пример breakdown</h3>
+        </div>
+        <div class="side-item"><strong>Запрошено</strong><span class="item-text">500.00 USDT</span></div>
+        <div class="side-item"><strong>Штраф</strong><span class="item-text">10.00 USDT</span></div>
+        <div class="side-item"><strong>К получению</strong><span class="item-text">490.00 USDT</span></div>
+        <div class="side-item"><strong>Источник</strong><span class="item-text">Часть депозита от 29.03.2026</span></div>
+      </aside>
+    </section>
+
+    <section class="table-card">
+      <div class="section-head">
+        <span class="kicker">Последние запросы</span>
+        <h2>История выводов</h2>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Тип</th>
+            <th>Сумма</th>
+            <th>Штраф</th>
+            <th>Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>14.04.2026</td><td>Начисленные проценты</td><td>350.00 USDT</td><td>0.00</td><td><span class="pill success">Исполнено</span></td></tr>
+          <tr><td>11.04.2026</td><td>Часть депозита</td><td>1 000.00 USDT</td><td>20.00</td><td><span class="pill warn">В обработке</span></td></tr>
+          <tr><td>03.04.2026</td><td>Начисленные проценты</td><td>275.00 USDT</td><td>0.00</td><td><span class="pill">Исполнено</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Nominal Zone</strong>
+        <span>Preview for GitHub Pages</span>
+      </div>
+      <span>Просмотр с телефона / проверка интерфейса</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
