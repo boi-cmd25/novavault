@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#07112b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<title>Nominal Zone — Профиль и настройки</title>
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      
+      <a class="brand" href="index.html">
+        <div class="brand-mark"><img src="assets/logo.png" alt="Nominal Zone logo" /></div>
+        <div>
+          <div class="brand-name">Nominal Zone</div>
+          <div class="brand-sub">Private capital structure</div>
+        </div>
+      </a>
+    
+      <div class="actions"><a class="btn" href="dashboard.html">Кабинет</a><a class="btn primary" href="support.html">Поддержка</a></div>
+    </div>
+  </header>
+  
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-top">
+      <div><div class="badge">Профиль и настройки</div><h1>Параметры профиля</h1><p>Экран для управления данными профиля, настройками уведомлений, параметрами безопасности и общими предпочтениями интерфейса.</p></div>
+      <div class="hero-actions"><a class="btn" href="history.html">История входов</a><a class="btn primary" href="#">Сохранить изменения</a></div>
+    </div>
+  </section>
+  <section class="layout-sidebar">
+    <aside class="panel">
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="avatar">NZ</div>
+          <div><strong>Private Member</strong><div class="subtext">ID профиля: NZ-20418-INV</div></div>
+        </div>
+      </div>
+      <div class="summary" style="margin-top:16px">
+        <div class="row"><span>Статус доступа</span><span>Активный</span></div>
+        <div class="row"><span>Уровень участия</span><span>Private</span></div>
+        <div class="row"><span>Последнее обновление</span><span>14.04.2026</span></div>
+      </div>
+      <nav class="menu" style="margin-top:16px">
+        <a class="active" href="settings.html">Основной профиль</a>
+        <a href="settings.html">Уведомления</a>
+        <a href="settings.html">Безопасность</a>
+        <a href="settings.html">Язык и интерфейс</a>
+        <a href="support.html">Поддержка</a>
+      </nav>
+    </aside>
+    <section class="grid-2">
+      <div class="panel">
+        <h2>Основной профиль</h2>
+        <div class="field"><label class="label">Имя профиля</label><input class="input" value="Private Member"></div>
+        <div class="field"><label class="label">Имя</label><input class="input" value="Oleg"></div>
+        <div class="field"><label class="label">Фамилия</label><input class="input" value="Borshuliak"></div>
+        <div class="field"><label class="label">Номер телефона</label><input class="input" value="+380 XX XXX XX XX"></div>
+        <div class="field"><label class="label">Email</label><input class="input" value="support@nominalzone.com"></div>
+        <div class="field"><label class="label">Telegram</label><input class="input" value="@nominalzone"></div>
+        <div class="field"><label class="label">Комментарий профиля</label><textarea class="textarea">Профиль используется для участия в закрытой структуре и сопровождения активного периода.</textarea></div>
+        <div class="notice success">Основные данные профиля используются для уведомлений, подтверждений и внутренней коммуникации.</div>
+      </div>
+      <div style="display:grid;gap:18px">
+        <section class="panel">
+          <h2>Уведомления</h2>
+          <div class="switcher">
+            <div class="switch-row"><div><strong>Начисление результата</strong><span>Уведомление о завершении расчётного этапа.</span></div><div class="toggle on"></div></div>
+            <div class="switch-row"><div><strong>Пополнение</strong><span>Уведомление о подтверждении новой заявки.</span></div><div class="toggle on"></div></div>
+            <div class="switch-row"><div><strong>Вывод</strong><span>Уведомление о смене статуса заявки.</span></div><div class="toggle on"></div></div>
+            <div class="switch-row"><div><strong>Перевод в депозит</strong><span>Уведомление о капитализации процентов.</span></div><div class="toggle"></div></div>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>Безопасность</h2>
+          <div class="security-grid">
+            <div class="security-item"><strong>Код доступа</strong><span>Последнее изменение: 04.04.2026.</span></div>
+            <div class="security-item"><strong>Двухэтапное подтверждение</strong><span>Включено для входа и чувствительных действий.</span></div>
+            <div class="security-item"><strong>История входов</strong><span>Отслеживание последних входов и устройств.</span></div>
+          </div>
+          <div class="row-actions" style="margin-top:18px"><a class="btn primary" href="#">Обновить безопасность</a><a class="btn warn" href="#">Завершить все сессии</a></div>
+        </section>
+      </div>
+    </section>
+  </section>
+</main>
+
+</div>
+</body>
+</html>

@@ -1,95 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nominal Zone — Вход</title>
-  <meta name="description" content="Nominal Zone preview" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#07112b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<title>Nominal Zone — Вход</title>
+<link rel="stylesheet" href="assets/site.css" />
 </head>
-<body data-page="login">
-  <header class="site-header">
-    <div class="container nav">
+<body>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      
       <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
-        <div class="brand-text">
-          <span class="brand-name">Nominal Zone</span>
-          <span class="brand-sub">Private capital structure</span>
+        <div class="brand-mark"><img src="assets/logo.png" alt="Nominal Zone logo" /></div>
+        <div>
+          <div class="brand-name">Nominal Zone</div>
+          <div class="brand-sub">Private capital structure</div>
         </div>
       </a>
-
-      <nav class="nav-menu">
-        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
-        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
-        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
-        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
-        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
-        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
-      </nav>
+    
+      <div class="actions"><a class="btn" href="register.html">Регистрация</a><a class="btn primary" href="support.html">Поддержка</a></div>
     </div>
   </header>
-
-  <main class="page-section">
-    <div class="container page-grid">
-      <section class="page-title-wrap">
-        <span class="kicker">Nominal Zone preview</span>
-        <h1 class="page-title">Вход в личный кабинет</h1>
-        <p class="page-subtitle">Страница собрана как мобильный и desktop preview. Здесь смотри только визуал, ритм отступов, читаемость полей и кнопок.</p>
-      </section>
-
-
-    <section class="grid-2">
-      <div class="form-card">
-        <div class="section-head">
-          <span class="kicker">Access</span>
-          <h2>Авторизация</h2>
-          <p>В production здесь будет связка с backend auth. Пока это чистый визуальный preview для просмотра на телефоне.</p>
-        </div>
-
-        <div class="field-grid">
-          <div class="field">
-            <label>Идентификатор доступа</label>
-            <input type="text" placeholder="Введите логин или ID доступа" />
-          </div>
-          <div class="field">
-            <label>Пароль</label>
-            <input type="password" placeholder="Введите пароль" />
-          </div>
-        </div>
-
-        <div class="button-row" style="margin-top:16px;">
-          <button class="btn-primary" type="button">Войти</button>
-          <button class="btn-secondary" type="button">Восстановить доступ</button>
-        </div>
+  
+<main class="page" style="display:flex;align-items:center;justify-content:center;padding:24px 12px;">
+  <div class="card-split">
+    <aside class="side">
+      <div class="hero">
+        <div class="badge">Доступ для инвесторов</div>
+        <h1>Вход в кабинет</h1>
+        <p>Защищённая точка входа в закрытый раздел Nominal Zone. Вход выполняется по индивидуально выданным данным доступа.</p>
       </div>
-
-      <aside class="side-card">
-        <div class="section-head">
-          <span class="kicker">Preview notes</span>
-          <h3>Что смотреть</h3>
-        </div>
-        <div class="side-item"><strong>Размер полей</strong><span class="item-text">Нормально ли выглядят инпуты с телефона и не слишком ли они широкие.</span></div>
-        <div class="side-item"><strong>Первый экран</strong><span class="item-text">Достаточно ли чисто выглядит страница без лишней перегрузки.</span></div>
-        <div class="side-item"><strong>Кнопка входа</strong><span class="item-text">Нравится ли яркость основной CTA и общий контраст.</span></div>
-      </aside>
+      <div class="contacts">
+        <div class="contact"><div class="k">Telegram</div><div class="v">@nominalzone</div><div class="s">Поддержка по доступу и координации.</div></div>
+        <div class="contact"><div class="k">Email</div><div class="v">support@nominalzone.com</div><div class="s">Канал для письменных обращений.</div></div>
+      </div>
+      <div class="notice warn">Если данных доступа нет, сначала направляется заявка на регистрацию или запрос доступа.</div>
+    </aside>
+    <section class="form-wrap">
+      <h2 class="section-title">Вход</h2>
+      <p class="section-text">Введите индивидуальные данные доступа для перехода в защищённый кабинет участника.</p>
+      <div class="field"><label class="label">Идентификатор доступа</label><input class="input" placeholder="Введите идентификатор" /></div>
+      <div class="field"><label class="label">Код доступа</label><input class="input" placeholder="Введите код доступа" /></div>
+      <div class="actions">
+        <a class="btn primary" href="dashboard.html">Войти в кабинет</a>
+        <a class="btn secondary" href="register.html">Регистрация</a>
+        <a class="btn secondary" href="support.html">Поддержка</a>
+      </div>
+      <div class="notice success">В рабочей версии сюда подключается реальная проверка данных доступа и переход в кабинет.</div>
     </section>
+  </div>
+</main>
 
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-row">
-      <div>
-        <strong>Nominal Zone</strong>
-        <span>Preview for GitHub Pages</span>
-      </div>
-      <span>Просмотр с телефона / проверка интерфейса</span>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
+</div>
 </body>
 </html>

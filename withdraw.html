@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#07112b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<title>Nominal Zone — Вывод</title>
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      
+      <a class="brand" href="index.html">
+        <div class="brand-mark"><img src="assets/logo.png" alt="Nominal Zone logo" /></div>
+        <div>
+          <div class="brand-name">Nominal Zone</div>
+          <div class="brand-sub">Private capital structure</div>
+        </div>
+      </a>
+    
+      <div class="actions"><a class="btn" href="dashboard.html">Кабинет</a><a class="btn primary" href="history.html">История</a></div>
+    </div>
+  </header>
+  
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-top">
+      <div><div class="badge">Экран вывода</div><h1>Вывод результата периода</h1><p>Отдельная страница для подачи заявки на вывод: сумма, адрес получения, формат завершения заявки и краткий регламент обработки.</p></div>
+      <div class="hero-actions"><a class="btn warn" href="transfer.html">Перевести в депозит</a><a class="btn primary" href="#">Создать заявку</a></div>
+    </div>
+  </section>
+  <section class="layout-2">
+    <div class="panel">
+      <h2>Параметры вывода</h2>
+      <div class="quick"><button>50 USDT</button><button>100 USDT</button><button>250 USDT</button><button>Всё</button></div>
+      <div class="field"><label class="label flex"><span>Сумма вывода</span><span>Доступно: 680 USDT</span></label><input class="input" value="250 USDT"></div>
+      <div class="grid-2">
+        <div class="field"><label class="label">Актив</label><select class="select"><option>USDT</option></select></div>
+        <div class="field"><label class="label">Сеть</label><select class="select"><option>TRC20</option><option>ERC20</option><option>BEP20</option></select></div>
+      </div>
+      <div class="field"><label class="label">Адрес получения</label><input class="input" value="TReceiverWalletAddressExampleWithdraw2026TRC20"></div>
+      <div class="field"><label class="label">Комментарий к заявке</label><input class="input" placeholder="Например: частичное завершение периода"></div>
+      <div class="summary">
+        <div class="row"><span>Сумма заявки</span><span>250 USDT</span></div>
+        <div class="row"><span>Формат вывода</span><span>USDT / TRC20</span></div>
+        <div class="row"><span>Статус заявки</span><span>ожидает подтверждения</span></div>
+        <div class="row"><span>Остаток в периоде</span><span>430 USDT</span></div>
+      </div>
+      <div class="notice success">Пользователь может вывести результат периода полностью или частично, либо перевести начисленный результат в основной депозит.</div>
+      <div class="row-actions" style="margin-top:18px"><a class="btn primary" href="#">Подтвердить вывод</a><a class="btn" href="#">Сохранить как черновик</a></div>
+    </div>
+    <div class="panel">
+      <h2>Статус и порядок обработки</h2>
+      <div class="status-card">
+        <div class="subtext">Текущая заявка</div>
+        <div class="compare-card" style="margin-top:12px;padding:0;border:none;background:transparent"><div class="big">Ожидает подтверждения</div></div>
+        <div class="summary">
+          <div class="row"><span>Начисленные проценты</span><span>680 USDT</span></div>
+          <div class="row"><span>Доступно к выводу</span><span>680 USDT</span></div>
+          <div class="row"><span>Перевод в депозит</span><span>доступен</span></div>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">01</div><div><strong>Создать заявку</strong><span>Зафиксировать сумму и адрес получения.</span></div></div>
+        <div class="step"><div class="step-num">02</div><div><strong>Подтвердить параметры</strong><span>Проверить формат вывода, адрес и сумму.</span></div></div>
+        <div class="step"><div class="step-num">03</div><div><strong>Завершить заявку</strong><span>После внутреннего подтверждения результат направляется по указанным реквизитам.</span></div></div>
+      </div>
+      <div class="notice warn">Изменение суммы, сети или адреса после фиксации заявки может потребовать повторного подтверждения.</div>
+      <div class="notice danger">Перед подтверждением заявки необходимо повторно проверить адрес получения.</div>
+    </div>
+  </section>
+</main>
+
+</div>
+</body>
+</html>

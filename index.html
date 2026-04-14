@@ -1,159 +1,165 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nominal Zone</title>
-  <meta name="description" content="Nominal Zone preview" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#07112b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<title>Nominal Zone — Главная</title>
+<link rel="stylesheet" href="assets/site.css" />
 </head>
-<body data-page="home">
-  <header class="site-header">
-    <div class="container nav">
+<body>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      
       <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
-        <div class="brand-text">
-          <span class="brand-name">Nominal Zone</span>
-          <span class="brand-sub">Private capital structure</span>
+        <div class="brand-mark"><img src="assets/logo.png" alt="Nominal Zone logo" /></div>
+        <div>
+          <div class="brand-name">Nominal Zone</div>
+          <div class="brand-sub">Private capital structure</div>
         </div>
       </a>
-
-      <nav class="nav-menu">
-        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
-        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
-        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
-        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
-        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
-        <a class="nav-cta" href="dashboard.html">Кабинет</a>
-      </nav>
+    
+      <div class="actions"><a class="btn primary" href="login.html">Client access</a><a class="btn" href="#">EN</a></div>
     </div>
   </header>
+  
+<main class="landing-wrap">
+  <section class="status-card">
+    <span class="kicker">Статус структуры</span>
+    <div class="ttl">Фаза первичного открытия</div>
+    <p>Формируется начальный контур участников. Подключение новых участников рассматривается в ограниченном формате в рамках действующего периода и долгосрочной модели управления капиталом.</p>
+    <div class="upd">UPD: 20.01.2026</div>
+  </section>
 
-  <main class="page-section">
-    <div class="container page-grid">
-      <section class="page-title-wrap">
-        <span class="kicker">Nominal Zone preview</span>
-        <h1 class="page-title">Частная структура размещения капитала с ежедневным отражением результата</h1>
-        <p class="page-subtitle">Многостраничный статический preview для GitHub Pages. Здесь можно с телефона смотреть landing и все основные страницы кабинета, чтобы находить визуальные неточности и править их по месту.</p>
-      </section>
+  <section class="intro-card">
+    <p><strong>Nominal Zone</strong> — частная структура размещения капитала с закрытым форматом участия.</p>
+    <p style="margin-top:12px">Модель выстроена вокруг дисциплины размещения, последовательной логики инвестиционного цикла и контролируемого подхода к результату.</p>
+    <p style="margin-top:12px">Участие не относится к открытому публичному предложению и рассматривается в пределах действующего периода и актуальных условий структуры.</p>
+  </section>
 
-
-    <section class="grid-2">
-      <div class="hero-card">
-        <div class="section-head">
-          <span class="kicker">Главная страница</span>
-          <h2>Landing page</h2>
-          <p>Страница построена вокруг результата, понятной градации участия и визуальной простоты без ухода в технические детали внутренней модели.</p>
-        </div>
-
-        <div class="metric-grid">
-          <article class="metric-card emphasis">
-            <span>Формат</span>
-            <strong>Closed private</strong>
-          </article>
-          <article class="metric-card">
-            <span>Старт участия</span>
-            <strong>от 250 USDT</strong>
-          </article>
-          <article class="metric-card soft">
-            <span>Отражение результата</span>
-            <strong>Ежедневно</strong>
-          </article>
-          <article class="metric-card">
-            <span>Управление</span>
-            <strong>Кабинет</strong>
-          </article>
-        </div>
-
-        <div class="button-row" style="margin-top:18px;">
-          <a class="btn-primary" href="dashboard.html">Открыть кабинет</a>
-          <a class="btn-secondary" href="register.html">Страница регистрации</a>
-          <a class="btn-secondary" href="support.html">Поддержка</a>
-        </div>
-      </div>
-
-      <aside class="side-card">
-        <div class="section-head">
-          <span class="kicker">Страницы preview</span>
-          <h3>Что уже можно смотреть</h3>
-        </div>
-
-        <div class="side-item">
-          <strong>Вход и регистрация</strong>
-          <span class="item-text">Отдельные страницы входа и подключения нового участника.</span>
-        </div>
-        <div class="side-item">
-          <strong>Личный кабинет</strong>
-          <span class="item-text">Главный dashboard, пополнение, вывод, реинвестирование, история и профиль.</span>
-        </div>
-        <div class="side-item">
-          <strong>Поддержка</strong>
-          <span class="item-text">Форма обращения и список типовых каналов связи.</span>
-        </div>
-      </aside>
+  <section class="landing-duo">
+    <section class="panel table-card">
+      <h2>Уровни размещения капитала</h2>
+      <p class="desc">Базовые уровни размещения капитала и ориентиры по месячной ставке в зависимости от объёма участия.</p>
+      <table>
+        <thead>
+          <tr><th>Сумма</th><th>В месяц</th><th>Уровень</th></tr>
+        </thead>
+        <tbody id="tiersBody">
+          <tr data-min="50" data-rate="0.03"><td>50 – 249 USDT</td><td>3.0%</td><td>Initial</td></tr>
+          <tr data-min="250" data-rate="0.033"><td>250 – 999 USDT</td><td>3.3%</td><td>Core</td></tr>
+          <tr data-min="1000" data-rate="0.037"><td>1 000 – 4 999 USDT</td><td>3.7%</td><td>Strategic</td></tr>
+          <tr data-min="5000" data-rate="0.041"><td>5 000 – 19 999 USDT</td><td>4.1%</td><td>Institutional</td></tr>
+          <tr data-min="20000" data-rate="0.045"><td>20 000 – 49 999 USDT</td><td>4.5%</td><td>Private</td></tr>
+          <tr data-min="50000" data-rate="0.045"><td>50 000+ USDT</td><td>Индивидуально</td><td>Individual</td></tr>
+        </tbody>
+      </table>
     </section>
 
-    <section class="card">
-      <div class="section-head">
-        <span class="kicker">Быстрая навигация</span>
-        <h2>Основные страницы</h2>
+    <section class="panel calc-card">
+      <h2>Инвестиционный калькулятор</h2>
+      <p class="desc">Калькулятор сразу показывает сумму размещения, срок участия, ставку уровня, доход периода и итоговую структуру результата.</p>
+
+      <div class="field-range">
+        <div class="range-head"><span>Сумма размещения</span><span id="depVal">2 137 USDT</span></div>
+        <input id="depositRange" type="range" min="50" max="50000" value="2137" />
       </div>
-      <div class="grid-3">
-        <a class="activity-item" href="login.html">
-          <div class="item-top"><span class="item-title">Вход</span><span class="pill">Auth</span></div>
-          <div class="item-text">Минималистичная страница входа в кабинет.</div>
-        </a>
-        <a class="activity-item" href="register.html">
-          <div class="item-top"><span class="item-title">Регистрация</span><span class="pill">Lead</span></div>
-          <div class="item-text">Форма заявки на подключение нового участника.</div>
-        </a>
-        <a class="activity-item" href="dashboard.html">
-          <div class="item-top"><span class="item-title">Кабинет</span><span class="pill success">Main</span></div>
-          <div class="item-text">Главная страница после входа с суммами и графиком.</div>
-        </a>
-        <a class="activity-item" href="topup.html">
-          <div class="item-top"><span class="item-title">Пополнение</span><span class="pill">USDT</span></div>
-          <div class="item-text">Создание заявки и блок реквизитов.</div>
-        </a>
-        <a class="activity-item" href="withdrawals.html">
-          <div class="item-top"><span class="item-title">Вывод</span><span class="pill warn">Funds</span></div>
-          <div class="item-text">Вывод начисленных процентов и части депозита.</div>
-        </a>
-        <a class="activity-item" href="reinvestments.html">
-          <div class="item-top"><span class="item-title">Реинвестирование</span><span class="pill success">Grow</span></div>
-          <div class="item-text">Перевод начисленных процентов в депозит.</div>
-        </a>
-        <a class="activity-item" href="history.html">
-          <div class="item-top"><span class="item-title">История</span><span class="pill">Logs</span></div>
-          <div class="item-text">Лента операций и фильтры.</div>
-        </a>
-        <a class="activity-item" href="profile.html">
-          <div class="item-top"><span class="item-title">Профиль</span><span class="pill">Settings</span></div>
-          <div class="item-text">Данные, уведомления и параметры аккаунта.</div>
-        </a>
-        <a class="activity-item" href="support.html">
-          <div class="item-top"><span class="item-title">Поддержка</span><span class="pill danger">Help</span></div>
-          <div class="item-text">Обращение в поддержку и контактные каналы.</div>
-        </a>
+      <div class="field-range">
+        <div class="range-head"><span>Срок участия</span><span id="monVal">2 мес.</span></div>
+        <input id="monthsRange" type="range" min="1" max="24" value="2" />
+      </div>
+      <label class="check"><input id="compound" type="checkbox" checked /><span>Капитализировать результат периода</span></label>
+
+      <div class="calc-kpis">
+        <div class="calc-kpi"><div class="k">Начальная сумма</div><div class="v" id="startVal">2 137 USDT</div></div>
+        <div class="calc-kpi"><div class="k">Ставка уровня</div><div class="v" id="rateVal">3.7%</div></div>
+        <div class="calc-kpi"><div class="k">Доход периода</div><div class="v" id="profitVal">161 USDT</div></div>
+        <div class="calc-kpi"><div class="k">Срок</div><div class="v" id="periodVal">2 мес.</div></div>
+        <div class="calc-kpi big"><div class="k">Итоговая сумма</div><div class="v" id="finalVal">2 298 USDT</div></div>
       </div>
     </section>
+  </section>
 
+  <section class="scheme-card">
+    <h2>Схема участия</h2>
+    <p class="desc">Схема нужна не для красоты, а чтобы пользователь видел полный путь: от запроса доступа до завершения периода и дальнейшего решения по результату.</p>
+    <div class="steps-line">
+      <div class="scheme-step c1"><div class="num">01</div><div class="title">Запрос доступа</div><div class="txt">Подключение к закрытому формату участия и подтверждение актуальных условий периода.</div></div>
+      <div class="scheme-step c2"><div class="num">02</div><div class="title">Передача капитала</div><div class="txt">Внесение капитала в рамках согласованного маршрута с фиксацией суммы в системе.</div></div>
+      <div class="scheme-step c3"><div class="num">03</div><div class="title">Активный цикл</div><div class="txt">Работа капитала в рамках выбранного уровня размещения и текущего инвестиционного периода.</div></div>
+      <div class="scheme-step c4"><div class="num">04</div><div class="title">Результат периода</div><div class="txt">Определение результата по завершении активного этапа и отражение итоговых значений.</div></div>
+      <div class="scheme-step c5"><div class="num">05</div><div class="title">Вывод / капитализация</div><div class="txt">Завершение периода через вывод результата или его перевод в основной депозит следующего цикла.</div></div>
     </div>
-  </main>
+  </section>
 
-  <footer class="footer">
-    <div class="container footer-row">
-      <div>
-        <strong>Nominal Zone</strong>
-        <span>Preview for GitHub Pages</span>
+  <section class="landing-footer-cta">
+    <section class="panel">
+      <h2>Условия участия</h2>
+      <div class="summary">
+        <div class="row"><span>Стартовый уровень</span><span>от 50 USDT</span></div>
+        <div class="row"><span>Формат доступа</span><span>закрытый</span></div>
+        <div class="row"><span>Период участия</span><span>по выбранному сценарию</span></div>
+        <div class="row"><span>Формат расчётов</span><span>USDT</span></div>
       </div>
-      <span>Просмотр с телефона / проверка интерфейса</span>
-    </div>
-  </footer>
+      <div class="row-actions" style="margin-top:18px">
+        <a class="btn primary" href="register.html">Регистрация</a>
+        <a class="btn" href="support.html">Поддержка</a>
+        <a class="btn" href="login.html">Client access</a>
+      </div>
+    </section>
+  </section>
 
-  <script src="app.js"></script>
+  <section class="closing-statement">
+    <h2>Заключительное положение</h2>
+    <p>Nominal Zone рассматривается как закрытая структура размещения капитала, ориентированная на дисциплинированный подход к участию и долгосрочную устойчивость модели.</p>
+    <p>Материалы, представленные на сайте, носят информационный характер и не являются индивидуальной инвестиционной рекомендацией.</p>
+    <p>Решение об участии принимается пользователем самостоятельно с учётом собственных целей, допустимого уровня риска и применимого правового режима.</p>
+  </section>
+</main>
+
+<script>
+(function(){
+  const dep = document.getElementById('depositRange');
+  const mon = document.getElementById('monthsRange');
+  const compound = document.getElementById('compound');
+  const rows = [...document.querySelectorAll('#tiersBody tr')];
+  const depVal = document.getElementById('depVal');
+  const monVal = document.getElementById('monVal');
+  const startVal = document.getElementById('startVal');
+  const rateVal = document.getElementById('rateVal');
+  const profitVal = document.getElementById('profitVal');
+  const periodVal = document.getElementById('periodVal');
+  const finalVal = document.getElementById('finalVal');
+  function fmt(n){ return Math.round(n).toLocaleString('en-US').replace(/,/g, ' ') + ' USDT'; }
+  function paint(slider){
+    const min = Number(slider.min), max = Number(slider.max), val = Number(slider.value);
+    const p = ((val - min) / (max - min)) * 100;
+    slider.style.background = `linear-gradient(90deg, var(--accent1) ${p}%, #39425b ${p}%)`;
+  }
+  function calc(){
+    const d = Number(dep.value), m = Number(mon.value);
+    let rate = 0.03, active = null;
+    rows.forEach(r => { r.classList.remove('active'); if (d >= Number(r.dataset.min)) { rate = Number(r.dataset.rate); active = r; } });
+    if(active) active.classList.add('active');
+    let total = d;
+    if(compound.checked){ for(let i=0;i<m;i++) total += total * rate; }
+    else { total = d + d * rate * m; }
+    const profit = total - d;
+    depVal.textContent = fmt(d); monVal.textContent = m + ' мес.';
+    startVal.textContent = fmt(d); rateVal.textContent = (rate * 100).toFixed(1) + '%';
+    profitVal.textContent = fmt(profit); periodVal.textContent = m + ' мес.'; finalVal.textContent = fmt(total);
+    paint(dep); paint(mon);
+  }
+  dep.addEventListener('input', calc); mon.addEventListener('input', calc); compound.addEventListener('change', calc); calc();
+})();
+</script>
+
+</div>
 </body>
 </html>

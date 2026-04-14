@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#07112b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<title>Nominal Zone — Перевод в депозит</title>
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      
+      <a class="brand" href="index.html">
+        <div class="brand-mark"><img src="assets/logo.png" alt="Nominal Zone logo" /></div>
+        <div>
+          <div class="brand-name">Nominal Zone</div>
+          <div class="brand-sub">Private capital structure</div>
+        </div>
+      </a>
+    
+      <div class="actions"><a class="btn" href="dashboard.html">Кабинет</a><a class="btn primary" href="history.html">История</a></div>
+    </div>
+  </header>
+  
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-top">
+      <div><div class="badge">Экран перевода в депозит</div><h1>Перевод начисленного результата в депозит</h1><p>Отдельный экран для направления начисленных процентов в основной депозит следующего периода участия без вывода результата наружу.</p></div>
+      <div class="hero-actions"><a class="btn warn" href="withdraw.html">Вывести результат</a><a class="btn primary" href="#">Перевести полностью</a></div>
+    </div>
+  </section>
+  <section class="stats">
+    <div class="stat"><div class="label">Начисленные проценты</div><div class="value">680 USDT</div></div>
+    <div class="stat"><div class="label">Основной депозит</div><div class="value">9,900 USDT</div></div>
+    <div class="stat"><div class="label">После перевода</div><div class="value">10,580 USDT</div></div>
+    <div class="stat"><div class="label">Активный уровень</div><div class="value">3.5%</div></div>
+  </section>
+  <section class="layout-2">
+    <div class="panel">
+      <h2>Параметры перевода</h2>
+      <div class="quick"><button>100 USDT</button><button>250 USDT</button><button>500 USDT</button><button>Всё</button></div>
+      <div class="field"><label class="label flex"><span>Сумма перевода</span><span>Доступно: 680 USDT</span></label><input class="input" value="680 USDT"></div>
+      <div class="field"><label class="label">Следующий период участия</label><select class="select"><option>Текущий активный период</option><option>Следующий инвестиционный период</option></select></div>
+      <div class="field"><label class="label">Комментарий</label><input class="input" placeholder="Например: капитализация полного результата периода"></div>
+      <div class="notice success">После подтверждения сумма будет переведена в депозит и начнёт участвовать в следующем расчётном цикле наравне с основной суммой.</div>
+      <div class="summary">
+        <div class="row"><span>Сумма перевода</span><span>680 USDT</span></div>
+        <div class="row"><span>Источник</span><span>Начисленные проценты</span></div>
+        <div class="row"><span>Назначение</span><span>Основной депозит</span></div>
+        <div class="row"><span>Статус операции</span><span>ожидает подтверждения</span></div>
+      </div>
+      <div class="row-actions" style="margin-top:18px"><a class="btn primary" href="#">Подтвердить перевод</a><a class="btn" href="#">Сохранить как черновик</a></div>
+    </div>
+    <div class="panel">
+      <h2>Изменение структуры капитала</h2>
+      <div class="compare">
+        <div class="compare-card"><strong>До перевода</strong><div class="big">9,900</div><div class="subtext">Основной депозит без учета результата периода.</div></div>
+        <div class="arrow">→</div>
+        <div class="compare-card" style="background:linear-gradient(180deg, rgba(34,211,238,.10), rgba(37,99,235,.08)); border-color:rgba(34,211,238,.18);"><strong>После перевода</strong><div class="big">10,580</div><div class="subtext">Новый размер депозита после добавления начисленных процентов.</div></div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">01</div><div><strong>Выбрать сумму</strong><span>Определить часть начисленного результата для депозита.</span></div></div>
+        <div class="step"><div class="step-num">02</div><div><strong>Подтвердить направление</strong><span>Закрепить перевод результата в основной депозит.</span></div></div>
+        <div class="step"><div class="step-num">03</div><div><strong>Обновить структуру периода</strong><span>Сумма становится частью депозита следующего этапа.</span></div></div>
+      </div>
+      <div class="notice warn">После подтверждения соответствующая часть начисленного результата перестаёт быть доступной для отдельного вывода.</div>
+    </div>
+  </section>
+</main>
+
+</div>
+</body>
+</html>

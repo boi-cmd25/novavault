@@ -1,144 +1,156 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nominal Zone — Кабинет</title>
-  <meta name="description" content="Nominal Zone preview" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#07112b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<title>Nominal Zone — Кабинет</title>
+<link rel="stylesheet" href="assets/site.css" />
 </head>
-<body data-page="dashboard">
-  <header class="site-header">
-    <div class="container nav">
+<body>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      
       <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="Nominal Zone" class="brand-logo" />
-        <div class="brand-text">
-          <span class="brand-name">Nominal Zone</span>
-          <span class="brand-sub">Private capital structure</span>
+        <div class="brand-mark"><img src="assets/logo.png" alt="Nominal Zone logo" /></div>
+        <div>
+          <div class="brand-name">Nominal Zone</div>
+          <div class="brand-sub">Private capital structure</div>
         </div>
       </a>
-
-      <nav class="nav-menu">
-        <a class="nav-link" data-nav="home" href="index.html">Главная</a>
-        <a class="nav-link" data-nav="login" href="login.html">Вход</a>
-        <a class="nav-link" data-nav="register" href="register.html">Регистрация</a>
-        <a class="nav-link" data-nav="dashboard" href="dashboard.html">Кабинет</a>
-        <a class="nav-link" data-nav="support" href="support.html">Поддержка</a>
-        <a class="nav-cta" href="dashboard.html">Личный кабинет</a>
-      </nav>
+    
+      <div class="actions"><a class="btn" href="support.html">Поддержка</a><a class="btn primary" href="settings.html">Профиль</a></div>
     </div>
   </header>
+  
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="badge">Рабочий кабинет</div>
+        <h1>Личный кабинет инвестора</h1>
+        <p>Главный экран кабинета: баланс, результат периода, график структуры капитала и быстрый переход к ключевым действиям.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="deposit.html">Пополнить</a>
+        <a class="btn" href="withdraw.html">Вывести</a>
+        <a class="btn" href="history.html">История</a>
+      </div>
+    </div>
+  </section>
 
-  <main class="page-section">
-    <div class="container page-grid">
-      <section class="page-title-wrap">
-        <span class="kicker">Nominal Zone preview</span>
-        <h1 class="page-title">Личный кабинет участника</h1>
-        <p class="page-subtitle">Главная страница кабинета должна сразу показывать сумму, начисленные проценты, итоговую доступность и ленту последних движений. Смотри здесь общую композицию и читаемость первого экрана.</p>
+  <section class="layout-dashboard">
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="avatar">NZ</div>
+          <div>
+            <strong>Private Member</strong>
+            <div class="subtext">Статус профиля: активный</div>
+          </div>
+        </div>
+      </div>
+      <nav class="menu" style="margin-top:16px">
+        <a class="active" href="dashboard.html">Обзор</a>
+        <a href="deposit.html">Пополнение</a>
+        <a href="withdraw.html">Вывод</a>
+        <a href="history.html">История</a>
+        <a href="transfer.html">В депозит</a>
+        <a href="settings.html">Профиль / настройки</a>
+        <a href="support.html">Поддержка</a>
+      </nav>
+    </aside>
+
+    <div style="display:grid;gap:18px">
+      <section class="stats">
+        <div class="stat"><div class="label">Основной баланс</div><div class="value">9 900 USDT</div></div>
+        <div class="stat"><div class="label">Начисленные проценты</div><div class="value">680 USDT</div></div>
+        <div class="stat"><div class="label">Доступно всего</div><div class="value">10 580 USDT</div></div>
+        <div class="stat"><div class="label">Активный уровень</div><div class="value">3.5%</div></div>
       </section>
 
-
-    <section class="metric-grid">
-      <article class="metric-card emphasis">
-        <span>Основной депозит</span>
-        <strong>18 500.00 USDT</strong>
-      </article>
-      <article class="metric-card">
-        <span>Начисленные проценты</span>
-        <strong>1 286.42 USDT</strong>
-      </article>
-      <article class="metric-card soft">
-        <span>Доступно всего</span>
-        <strong>19 786.42 USDT</strong>
-      </article>
-      <article class="metric-card">
-        <span>Примерный ежедневный процент</span>
-        <strong>0.14%</strong>
-      </article>
-    </section>
-
-    <section class="grid-2">
-      <div class="chart-card">
-        <div class="section-head">
-          <span class="kicker">Динамика</span>
-          <h2>Рост суммы</h2>
-          <p>Желтая линия — депозит, синяя линия — депозит с начисленными процентами.</p>
-        </div>
-        <div class="chart-legend">
-          <span class="legend-item"><i class="legend-dot gold"></i>Депозит</span>
-          <span class="legend-item"><i class="legend-dot blue"></i>Депозит + начисления</span>
-        </div>
-        <div class="chart-canvas">
-          <svg class="curve" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M0,62 C10,60 18,58 28,57 C42,56 54,55 68,54 C81,53 90,52 100,50" fill="none" stroke="#efc85b" stroke-width="2.2"/>
-            <path d="M0,70 C12,66 20,63 32,59 C45,55 58,50 72,45 C84,40 92,36 100,28" fill="none" stroke="#85bfff" stroke-width="2.2"/>
-          </svg>
-        </div>
-      </div>
-
-      <aside class="side-card">
-        <div class="section-head">
-          <span class="kicker">Быстрые действия</span>
-          <h3>Навигация по кабинету</h3>
+      <section class="layout-2">
+        <div class="panel">
+          <h2>Динамика структуры капитала</h2>
+          <p class="desc">График разделяет депозит и общую сумму с учетом начисленных процентов.</p>
+          <div class="chart">
+            <svg viewBox="0 0 760 300" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="fillA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.24"></stop>
+                  <stop offset="100%" stop-color="#2563eb" stop-opacity="0.02"></stop>
+                </linearGradient>
+              </defs>
+              <g opacity="0.32">
+                <line x1="0" y1="52" x2="760" y2="52" stroke="rgba(255,255,255,.10)"></line>
+                <line x1="0" y1="104" x2="760" y2="104" stroke="rgba(255,255,255,.10)"></line>
+                <line x1="0" y1="156" x2="760" y2="156" stroke="rgba(255,255,255,.10)"></line>
+                <line x1="0" y1="208" x2="760" y2="208" stroke="rgba(255,255,255,.10)"></line>
+                <line x1="0" y1="260" x2="760" y2="260" stroke="rgba(255,255,255,.10)"></line>
+              </g>
+              <path d="M 20 214 C 70 212, 110 206, 150 201 C 200 194, 240 188, 290 180 C 340 172, 390 160, 440 144 C 500 126, 560 106, 620 82 C 660 66, 690 52, 720 40 L 720 286 L 20 286 Z" fill="url(#fillA)"></path>
+              <path d="M 20 232 C 70 230, 110 226, 150 222 C 200 216, 240 210, 290 202 C 340 195, 390 188, 440 177 C 500 164, 560 148, 620 128 C 660 116, 690 104, 720 94" fill="none" stroke="#facc15" stroke-width="3.2" stroke-linecap="round"></path>
+              <path d="M 20 214 C 70 212, 110 206, 150 201 C 200 194, 240 188, 290 180 C 340 172, 390 160, 440 144 C 500 126, 560 106, 620 82 C 660 66, 690 52, 720 40" fill="none" stroke="#22d3ee" stroke-width="3.2" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item"><span class="legend-line" style="background:#facc15"></span><span>Депозит</span></div>
+            <div class="legend-item"><span class="legend-line" style="background:#22d3ee"></span><span>Депозит + начисленные проценты</span></div>
+          </div>
         </div>
 
-        <a class="side-item" href="topup.html">
-          <strong>Пополнение</strong>
-          <span class="item-text">Создание новой заявки и просмотр активных пополнений.</span>
-        </a>
-        <a class="side-item" href="withdrawals.html">
-          <strong>Вывод</strong>
-          <span class="item-text">Вывод начисленных процентов или части основного депозита.</span>
-        </a>
-        <a class="side-item" href="reinvestments.html">
-          <strong>Реинвестирование</strong>
-          <span class="item-text">Перевод начисленных процентов в новую часть депозита.</span>
-        </a>
-        <a class="side-item" href="history.html">
-          <strong>История операций</strong>
-          <span class="item-text">Детальная лента движений с фильтрацией.</span>
-        </a>
-      </aside>
-    </section>
-
-    <section class="card">
-      <div class="section-head">
-        <span class="kicker">Последние операции</span>
-        <h2>Лента активности</h2>
-      </div>
-
-      <div class="activity-list">
-        <div class="activity-item">
-          <div class="item-top"><span class="item-title">Ежедневное начисление</span><span class="pill success">+24.86 USDT</span></div>
-          <div class="item-text">Суточное отражение результата за текущий расчетный период.</div>
+        <div style="display:grid;gap:18px">
+          <section class="panel">
+            <h2>Текущий статус</h2>
+            <div class="summary">
+              <div class="row"><span>Следующее начисление</span><span>через 08:14:22</span></div>
+              <div class="row"><span>Активный период</span><span>6 месяцев</span></div>
+              <div class="row"><span>Формат участия</span><span>действующий</span></div>
+              <div class="row"><span>Структура доступа</span><span>Private</span></div>
+            </div>
+          </section>
+          <section class="panel">
+            <h2>Краткий обзор</h2>
+            <div class="summary">
+              <div class="row"><span>Сумма размещения</span><span>9 900 USDT</span></div>
+              <div class="row"><span>Перевод результата в депозит</span><span>доступен</span></div>
+              <div class="row"><span>Выведено ранее</span><span>540 USDT</span></div>
+              <div class="row"><span>Начисленные проценты</span><span>680 USDT</span></div>
+            </div>
+          </section>
         </div>
-        <div class="activity-item">
-          <div class="item-top"><span class="item-title">Реинвестирование</span><span class="pill warn">1 000.00 USDT</span></div>
-          <div class="item-text">Часть начисленных процентов переведена в новую депозитную часть.</div>
-        </div>
-        <div class="activity-item">
-          <div class="item-top"><span class="item-title">Пополнение</span><span class="pill">5 000.00 USDT</span></div>
-          <div class="item-text">Подтверждено и отражено как новая активная часть участия.</div>
-        </div>
-      </div>
-    </section>
+      </section>
 
+      <section class="grid-2">
+        <div class="panel">
+          <h2>Быстрые действия</h2>
+          <div class="contacts">
+            <div class="contact"><div class="k">Пополнение</div><div class="s">Переход к форме внесения капитала и подтверждения новой операции.</div></div>
+            <div class="contact"><div class="k">Вывод</div><div class="s">Переход к подаче заявки на завершение части периода и фиксацию результата.</div></div>
+            <div class="contact"><div class="k">Перевод в депозит</div><div class="s">Возможность переводить начисленные проценты в основной депозит.</div></div>
+            <div class="contact"><div class="k">История операций</div><div class="s">Просмотр всех этапов участия, начислений и действий по кабинету.</div></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>Последние операции</h2>
+          <div class="timeline">
+            <div class="contact"><div class="k">Пополнение</div><div class="v">+2,000 USDT</div><div class="s">12.04.2026 • подтверждено</div></div>
+            <div class="contact"><div class="k">Результат периода</div><div class="v">+118 USDT</div><div class="s">11.04.2026 • начислено</div></div>
+            <div class="contact"><div class="k">Перевод в депозит</div><div class="v">+300 USDT</div><div class="s">09.04.2026 • применено</div></div>
+            <div class="contact"><div class="k">Завершение периода</div><div class="v">540 USDT</div><div class="s">05.04.2026 • завершено</div></div>
+          </div>
+        </div>
+      </section>
     </div>
-  </main>
+  </section>
+</main>
 
-  <footer class="footer">
-    <div class="container footer-row">
-      <div>
-        <strong>Nominal Zone</strong>
-        <span>Preview for GitHub Pages</span>
-      </div>
-      <span>Просмотр с телефона / проверка интерфейса</span>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
+</div>
 </body>
 </html>
